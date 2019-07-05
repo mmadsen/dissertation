@@ -1,0 +1,106 @@
+\begin{description}[leftmargin=-1\labelwidth]
+\item[\textsc{Overview}] Forward-time models of \ct track the entire population of individuals and variants, and are the focus of this chapter.  Here we review specific models of \ct derived from analogous models in population genetics, covering both evolution within a single population and evolution across many local populations connected by agent movement, migration, and the ``birth'' of new populations by colonization.  
+
+\item[\textsc{Contents}] In Section \ref{sec:structure-ct-models} we review the formal and mathematical structure of forward-time \ct models.  In Section \ref{sec:ct-models-within-population} we examine models of \ct within a single, closed population, including neutral or unbiased models (Section \ref{sec:neutral-models-single-population}) and models with structured trait spaces, suitable for describing complex technologies with dependencies and knowledge prerequisites (Section \ref{sec:structured-information-models}).  Section \ref{sec:ct-models-among-populations} generalizes the single population case to multiple interacting populations, connected by movement and migration.  In Section \ref{sec:metapopulation-methods-modeling-structure} we review various approaches to modeling localized interaction, migration, and movement, including lattice models, graphs and complex networks, and continuous diffusion models.  In Section \ref{sec:metapopulation-modeling} we review the ``metapopulation'' concept, given its importance in contemporary population genetics and epidemiological modeling, and conclude with a review in  Section \ref{sec:metapopulation-neutral-ct} of neutral models in metapopulations.  
+\end{description}
+
+
+
+
+\section{Structure of Cultural Transmission Models}
+\label{sec:structure-ct-models}
+
+\notetoauthor{Intent is to describe stochastic copying models as Markov chains, discuss the major observable quantities we can get (e.g., stationary distributions, various stopping times, cluster sizes, etc).  Describe difference between forward and backward time models, justifying our interest in forward time models for archaeological purposes.  Describe classic two-allele and multiple/infinite allele extensions, and the difference between synchronic update dynamics (WF) and continuous updating (Moran).}
+
+
+\section{Cultural Transmission Within a Single Population}
+\label{sec:ct-models-within-population}
+
+\subsection{Neutral Models of \CT}
+\label{sec:neutral-models-single-population}
+
+Following Dunnell's \citeyearpar{8961} suggestion that the distribution of stylistic variation is explained by neutrality with respect to selection,
+\citet{Neiman1995} introduced the Wright-Fisher infinite-alleles (WF-IA) model to archaeology as a formal description of unbiased \ct within prehistoric populations.  Here I review the main characteristics of WF-IA as employed by archaeologists.   
+
+The well-mixed neutral Wright-Fisher infinite-alleles model \citep{kimura1964number} considers a single dimension (``locus'') at which an unlimited number of variants (``alleles'') can occur, in a population of $N$ individuals.\footnote{Conventionally, the model treats a diploid population, in which N individuals are composed of 2N chromosomes and thus there are always 2N genes tracked in the population.  The haploid version is more appropriate for modeling cultural phenomena, and thus formulas given in this paper may differ from those given by \citet{Ewens2004} and other sources by a factor of two.  For example, the key parameter $\theta$ is defined as $2N\mu$ rather than the common genetic definition $4N\mu$.}  The state of the population in any generation is given in several ways:  a vector representing the trait possessed by each individual (census), a vector giving the abundance of each trait in the population (occupation numbers), or by the number of traits represented in a population by a specific count (spectrum).  
+
+In each generation, each of $N$ individuals selects an individual at random in the population (without respect to spatial or social structure, hence ``well-mixed''), and adopts the trait that individual possessed in the previous generation.\footnote{An individual can select themselves at random since sampling is with replacement, and this would be equivalent to ``keeping'' one's existing trait for that generation.}  Equivalently, a new set of $N$ individuals are formed by sampling the previous generation with replacement.  At rate $\mu$ for each individual, a new variant is added to the population instead of copying a random individual, leading to a population rate of innovations $\theta = 2N\mu$ \citep{Ewens2004}, with no ``back-mutation'' to existing traits.\footnote{It is important to note that $\theta$ is not a measure of the ``diversity'' of traits in the population, as it has been employed in several archaeological studies, but is instead a \emph{rate} parameter of the model.}  An important consequence of this innovation model is that each variant is eventually lost from the population given enough time, and replaced with new variants.  Thus, there is no strict stationary distribution for the Markov chain describing WF-IA, although there is a quasi-stationary equilibrium in which the population displays a characteristic number of variants, with a stable frequency distribution governed by the value of $\theta$.  
+
+The distribution of variants in the full population is complex, and exact expressions are usually unknown for WF-IA, with most population properties obtained by diffusion approximation \citep{Ewens2004}.  Archaeologists are fortunate, however, that the \emph{sampling} properties of the model are well understood, since we always deal with samples of past human activity, rather than population-level census information.  The basic result, due to \citet{ewens1972sampling}, is the joint distribution of variant counts in a sample of size $n$, which is given by the Ewens sampling distribution, given the population innovation rate ($\theta$):
+
+\begin{equation}
+\label{eq:esd}
+\mathbb{P}_{\theta,n}(a_i, \ldots, a_n) = \frac{n!}{\theta^{(n)}} \prod^n_{j=1} \frac{(\theta/j)^{a_j}}{a_j!}
+\end{equation}
+
+where $\theta^{(n)}$ is the Pochhammer symbol or ``rising factorial'' $\theta(\theta+1)(\theta + 2)\cdots(\theta + n - 1)$.  In most empirical cases, we cannot measure (or do not set through experiment) the value of $\theta$, so a more useful relation is the distribution of individuals across variants (i.e., the occupation numbers), conditional upon the number of variants $k_{obs}$ observed in a sample of size $n$:
+
+\begin{equation}
+\label{eq:conditional-esd}
+\mathbb{P}(n_1, n_2, \ldots, n_k | k_{obs}) = \frac{n!}{|S^k_n| k! n_1 n_2 \cdots n_k}
+\end{equation}
+
+where $|S^k_n|$ denote the \emph{Stirling numbers of the first kind}, which give the number of permutations of $n$ elements into $k$ non-empty subsets \citep{abramowitz1965}.\errortofix{This description is for the Stirling second kind?}  The latter serves here as the normalization factor, giving us a proper probability distribution.   
+
+From the core probability distributions which compose the WF-IA model, many observable quantities have been calculated, including the form of the trait frequency spectrum which describes the expected ``evenness'' of traits at a given innovation rate, the expected richness of traits in a sample of given size, and various expected times to exit or fixation (in a non-infinite-alleles model).  The core probability distributions also yield statistical tests by determining the likelihood that a sample of given size is drawn from Equation \ref{eq:conditional-esd}.  The two most important such tests  are the Ewens-Watterson test using the sample homozygosity, and Slatkin's ``exact'' test \citep{durrett2008,Ewens2004,slatkin1994exact,slatkin1996correction,slatkin1994exact,slatkin1996correction}.  
+
+These expectations apply at equilibrium to synchronic samples, and given the ergodic hypothesis, to diachronic samples that constitute true time-averages (which are possible in contemporary field or laboratory settings).  Accretional assemblages are not true ``time-averages'' in the sense usually employed in mathematics, statistics, and physics, but instead are \emph{cumulative} samples over a duration.  In \citet{Madsen2012TA}, I describe the results of numerical simulations designed to determine whether model expectations, or the power of statistical tests of neutrality, are modified when aggregated in the same manner as cumulative archaeological samples.  The results show that once a sample duration exceeds the mean trait lifetime (not necessarily the mean lifetime of an archaeological type, but a modeled trait), measured richness begins to increase, diversity curves are flattened, and neutrality tests are subject to excessive Type I error.  
+
+\subsection{Structured Information Models with Axelrod Dynamics}
+\label{sec:structured-information-models}
+
+
+
+\section{Cultural Transmission Among Multiple Populations}
+\label{sec:ct-models-among-populations}
+
+\subsection{Methods of Modeling Population Structure}
+\label{sec:metapopulation-methods-modeling-structure}
+
+\notetoauthor{Intent here is to review methods of introducing population structure.  Refer to EGT literature which progressed from lattice models (having much in common with statistical physical models) to complex networks.  Metapopulation models are really a way of creating mesoscopic structure with many different connectivity patterns, and simplifying the within-deme interaction to panmixis for simplicity, right? }
+
+%In this section I review the main properties of unbiased \ct models, both within a single population and within a metapopulation composed of interacting communities.  There are several ways of modeling unbiased transmission in extended populations, each appropriate for explaining different empirical situations.  For example, a continuous reaction-diffusion model would be the best choice for a mobile and dispersed population.  For my dissertation research, the appropriate choice given my Late Prehistoric case study is a structured metapopulation model, given sedentary nucleated populations in the study area.  
+%
+% I focus in this project upon unbiased models of transmission, for several reasons.  First, unbiased copying is the microevolutionary model which best reflects our intuition that homology is best traced using models which incorporate only copying and a \glslink{glos:drift}{drift} component arising from stochastic sampling of a finite population over time \citep{8961,Neiman1995,Lipo2000}.  Second, since we expect real human populations to exhibit heterogeneity in the copying and imitation rules they employ, and for those rules to be chosen situationally or to shift over the human lifespan, it is likely that when averaged over an entire population with individuals at different stages of the life cycle, many of the transmission biases that are of interest when studying individual behavior will average themselves out.  Also, given that we study accretional, diachronic deposits, time-averaging (see Section \ref{sec:wfia-single-population}) will further cause individual biases to combine and form an aggregate record which may be well described by an unbiased transmission model.  
+%  
+%This second reason is, in fact, a conjecture, and I return to it in Research Question \ref{rq:unbiased-adequate} below.  If the above intuition is correct, then archaeologists may not need to concern themselves, when studying long-duration or regional scale data, with differences in ``modes'' of transmission or the fine details of dual-inheritance models.  
+
+
+
+\subsection{Neutral \CT in a Metapopulation}
+\label{sec:metapopulation-neutral-ct}
+
+\Ct in human groups is almost never constrained to occur within a single, closed group.  Instead, even if people might be influenced more heavily by immediate family, friends, and neighbors, there is also considerable information exchange between groups and individuals who are unrelated or geographically distant.  Exogamy, trade, and the migration of entire groups are some of the proximate mechanisms for information flows that are outside immediate social or residential groups.  Thus, even if we can approximate the dynamics of neutral transmission within a group by the model described above, when we seek to describe patterns among groups, or across larger regions, we need models which explicitly contain population structure.
+
+This can be done in several ways.  If an empirical case involves highly mobile individuals, or groups that practice dispersed settlement systems, then continuous spatial models may be required \cite[e.g.][]{kandler2009innovation,kandler2009investigation}.  In situations where populations are sedentary and nucleated, in contrast, a metapopulation approach is warranted, and is the approach taken here given the Late Prehistoric case study described in Section \ref{sec:case-study}.  In the metapopulation approach, populations are spatially structured into local subpopulations (or demes), with migration among the demes which affects the local and often global dynamics of the processes being modeled.  Often, not invariably, demes can come into being through colonization, and become extinct within a metapopulation \citep[see papers in ][for an introduction to the diversity of metapopulation model applications]{hanski1997metapopulation}.
+
+\input{graphics/fig-simple-metapopulation-model}
+
+Figure \ref{fig:simple-metapopulation-models} schematically depicts two metapopulation models involving four demes.  Model A represents the simplest metapopulation model, originally introduced by Sewall Wright as the ``island'' model \citep{Wright1943}, and much analyzed in theoretical population genetics.  In the simplest model, netural drift proceeds within each of the four demes (indicated by the looped arrows), and individuals are able to migrate between any pair of demes, at a constant rate for the whole metapopulation.  This model is ``well-mixed'' in a regional sense, although it is structured into separate interacting populations at the individual level.  This structure yields some interesting results.  In general, the effective population size ($N_e$) is lower in a structured metapopulation than in a single population of comparable census size \citep{barton1997evolution}.  
+
+In Model A, the variance in traits across local demes is given by Wright's formula:
+
+\begin{equation}
+\label{eq:wright-island-fst}
+F_{st} \approx \frac{1}{2Nm + 1}
+\end{equation}
+
+where $N$ is the population size of a deme (assumed to be constant here), and $m$ is the fraction of each deme which emigrates and is replaced by migrants drawn at random from the entire population.  Other variations of the simple island model include stepping-stone models, in which populations demes are connected to nearest neighbors on a lattice or ring structure \cite[e.g. ][]{kimura1964number,kimura1964stepping,weiss1965mathematical,kimura1968genetic,kimura1971pattern,maruyama1980genetic}.  While Model A is not a realistic model and given uniform information flow across demes, would not yield the differentiation into seriation solution groups that we see in archaeological data, it has a variety of known analytic results, making it useful for verifying the correctness of a computational model (see Section \ref{sec:verification-metapopulation}).  
+
+Model B depicts a snapshot in a more realistic metapopulation model, of the kind relevant in this research.  The model either represents a synchronic view, or a snapshot in time of a metapopulation where demes can become extinct and be colonized.  In this model, information flow between demes is variable among pairs, with very high flow rates between the two demes on the right, and very little flow between the bottom left deme and the other three.  Model B is the type of metapopulation model that I believe best models what we see is regional-scale seriation solution groups given by Lipo's iterative pairwise method.  I propose that the ability to seriate certain assemblages together (e.g., Group 2 in Figure \ref{fig:pfg-seriations-tested}) is the result of assemblages representing samples of artifact discard from demes linked by high rates of information flow, with low rates of flow to other demes which will not seriate together, given a model of structured interaction like that in Model B.  
+
+The dynamics of neutral transmission within demes is the same as described in Section \ref{sec:wfia-single-population} above, with the exception that new variants are introduced to a deme both by endogeneous innovation ($\mu_i$), and by the probabilities of obtaining a variant from another specific deme (generalizing the notion of ``migration'' to not require residential mobility, but to include temporary traveling for trade) at rate $m_{i,j}$.   Thus, for any given deme, the overall rate of innovation is:
+
+\begin{equation}
+\label{eq:demic-innovation-rate}
+\theta_i = 2N_i \mu_i + \sum_{j=1}^D m_j
+\end{equation}
+
+Since modeling the transmission behind seriation solution groups requires that demes come into existence and then become extinct as identifiable units with population continuity, the set of demes available for migration will change over time, and necessarily so will the set of migration rate values (even if we do not model short-term fluctuations in migration rate within a pair of demes).\footnote{Since we are modeling unbiased transmission at regional scales here to explain variation among assemblages, and not reconstruct individual behavior, there is no need to model variation among individuals at all.  This would change if we were studying selection at regional scales, of course.}   Thus, the set of $m_{i,j}(t)$ values form a ``migration matrix'' $\mathbf{M}(t)$ which defines the metapopulation structure at any point in time, and the overall time-dependent migration matrix describes the history of population interaction. 
+
+It is this time-dependent migration matrix that we wish to model and understand, since I am proposing that its structure causes the overall pattern of archaeological assemblages being divided into sets of seriation solutions.  The likelihood that information will be shared across two or more demes (and thus that they will have sets of archaeological class frequencies which are sufficiently ``in sync'' to seriate together) will be a function not just of the migration matrix possibilities just described, but the endogeneous rate of innovation relative to the size of the deme (i.e., $\theta$ for each deme).  The latter quantity controls the rate at which variants are lost to drift in a population.  If two or more demes come to share a new innovation, then their migration matrix values over that time span must reflect one of the following scenarios: (a) demes partially overlap temporally, and have a relatively high migration matrix term describing the sharing of variation between their source demes, (b) an assemblage represents the source of colonists for the establishment of a new deme, and thus there is one-way information flow between two otherwise non-overlapping demes, or (c) a combination of the two where a second deme is established by the first, and thereafter during a period of temporal overlap, the demes share migrants and information.  
+
+
+
+
+

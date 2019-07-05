@@ -1,0 +1,72 @@
+% Something like the following is needed in every document that includes this glossary, but it should
+% be defined in the INCLUDING document so that the style can be adjusted to match the document
+% style (e.g., actual dissertation, journal article, etc
+% This formats the actual hyperlinks to glossary entries WITHIN the text using small caps.
+%
+
+\renewcommand*{\glstextformat}[1]{\textsc{#1}}
+%%%%%%%%%%%%%%%%%%%% Glossary Entries %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newglossaryentry{glos:ENTRY}{name={FULL NAME}, description={FULL DESCRIPTION}}
+
+
+\newglossaryentry{glos:designspace}{name={Design Space}, description={foo}}
+
+\newglossaryentry{glos:coarsegraining}{name={Coarse Graining}, description={The process of representing a system with fewer degrees of freedom than are actually present in that system.  Coarse graining produces a compressed description of a system, often capturing its behavior at larger spatial or longer time scales than a detailed \gsl{glos:microscopic} theory.}}
+
+\newglossaryentry{glos:efftheory}{name={Effective Theory}, description={A theory which accounts for phenomena at a particular scale of description, without claiming to be a full \gls{glos:microscopic} or fundamental theory. In statistical physics and the social sciences, effective theories are often coarse grained models.}}
+
+\newglossaryentry{glos:basinattraction}{name={Basin of Attraction}, description={FULL DESCRIPTION}}
+
+\newglossaryentry{glos:cgctmodel}{name={Coarse Grained CT Model}, description={A formal model of a cultural transmission process which is constructed to describe patterns of trait abundance and flow in coarse grained variables (whether coarse graining is temporal, spatiotemporal, population averaging, observational units, or some combination (as is most common in archaeology).  Such models are needed in order to apply an individual-scale transmission process to the explanation of abundance patterns in phenomena which are aggregated in various ways.}} 
+
+%\newglossaryentry{glos:snm}{name={Social Network Model}, description={A mathematical graph defined to represent the pattern of social contacts between individuals, where individuals are represented by vertices, and contacts by edges.  The meaning of edges is defined by a theoretical model, which provides an algorithm for defining elements of the graph's adjacency matrix.  If we are providing a representation at a single point in time, the model is simply a single graph object; if the model is time-transgressive, the accompanying theoretical model must define a dynamics for both the vertex set and the edge set, capturing the evolution of the population and its social contacts over time}}
+
+
+\newglossaryentry{glos:microscopic}{name={Microscopic}, description={A theory or model constructed in terms of the interaction and dynamics of individuals, or describing system behavior in terms of individual objects without averaging or aggregation.  In a general sense, we seek to ground higher-level theories (say, speciation) as being the aggregated dynamical consequences of lower-level, ``microscopic'' theories (e.g., competition and adaptive dynamics)}}
+
+\newglossaryentry{glos:macroscopic}{name={Macroscopic}, description={A theory or model constructed in terms of aggregate, system-level properties, or degress of freedom which result from aggregating and averaging the state of individual system components.  Macroscopic variables may be time-independent, as when a system is at equilibrium, or time-dependent in a non-equilibrium system.  An example of a macroscopic property would be the total population size under study (which can either be static or fluctuate over time).}}
+
+\newglossaryentry{glos:mesoscopic}{name={Mesoscopic}, description={With reference to a mathematical or formal model:  observable quantities which describe variation in system state at scales smaller than the whole evolving system, in ways that may relate to spatial, or spatiotemporal variation.  Here, ``spatial'' is being used to indicate subsets of the population of agents and their defined relationships, rather than to strictly indicate a metric or Euclidian topological relationship.  An example might be the distribution of the sizes of clusters of a cultural configuration, in Axelrod's model of culture, or the frequency spectrum of cultural traits within different subregions under analysis}}
+
+\newglossaryentry{glos:microevolutionary}{name={Microevolutionary}, description={Theory and models of evolutionary change that refers to variation among individuals, and the processes that create, sort, and propagate that variation.  Most often, microevolutionary theory is individual-based or at most, summarizes individual variation in small populations (demes) across short spans of time.  Microevolutionary models are, in other words, frequently \gls{glos:microscopic} models}}
+
+\newglossaryentry{glos:macroevolutionary}{name={Macroevolutionary}, description={Theory and models of evolutionary change that refers to variation and processes at large scales of aggregation:  either of individuals, in the form of phylogenetic tracking of species and higher taxa, or across large blocks of time and/or space, as in biogeography.  The processes described by a macroevolutionary model are typically not the same as those given by microevolutionary models, but should be reducible in principle.}} 
+
+\newglossaryentry{glos:drift}{name={Drift}, description={Stochastic fluctuation in trait frequencies that occur in finite populations due to sampling effects.  Drift is \emph{not} equivalent to ``unbiased'' copying, or selective neutrality.  This distinction is important, since drift only occurs in stochastic systems, whereas we can easily define an ``unbiased'' transmission rule in a deterministic transmission model---this is what the Hardy-Weinberg equilibrium is all about}}
+
+\newglossaryentry{glos:qs}{name={Quasi-stationary}, description={In a stochastic process without absorbing states, and in which new states can be created over time (e.g., mutation), we cannot define a true ``stationary distribution,'' but instead we can determine whether some macroscopic quantity is roughly constant over time.  A good example is the infinite-alleles Wright-Fisher process in genetics.  Since new variants are introduced by mutation throughout the lifetime of the process, there is no true stationary distribution.  But as Ewens (\citeyear{Ewens2004}) describes, the distribution of the frequencies of traits will stabilize, even though specific traits are being lost and introduced in the population.  The resulting frequency spectrum is thus quasi-stationary, and forms an important observable quantity in empirical population genetics}}
+
+\newglossaryentry{glos:dynamics}{name={Dynamics}, description={A specification of the time evolution of a process, or the algorithm by which a given set of initial conditions and a set of microscopic rules are iterated mathematically to produce new system states over time.  Examples from population genetics include the Wright-Fisher and Moran dynamics.  These dynamics differ in the number of state changes or ``samples'' created in each elemental time step; in the Wright-Fisher dynamics the entire population is updated at each time step, whereas in the Moran dynamics only a single individual has a non-zero probability of being updated at any moment in time.  The choice of a dynamics can have subtle effects on the macroscopic observables calculated from a given microscopic specification and thus is a crucial element in formulating a cultural transmission model}}
+
+\newglossaryentry{glos:phasespace}{name={Phase Space}, description={An abstract space in which all possible states of a system or model are represented, with each state corresponding to one unique point in the phase space.  The concept is derived from statistical mechanics, where the phase space of a physical system consists of all possible positions and momenta of a set of particles.  More generally, each degree of freedom or parameter of a system is represented by an axis, giving a multidimensional space.  As the system evolves according to a set of microscopic rules and dynamics, the evolution of the system as a whole is represented by a ``path'' or trajectory in the phase space.  The set of all paths then defines the dynamical behavior of a model}}
+
+\newglossaryentry{glos:equifinality}{name={Equifinality}, description={The principle that in an open system a given equilibrium or stable state can be reached in many ways, through many phase space trajectories.  In less formal terms, it means that the same empirical pattern or data distribution can be the result of different processes}}
+
+\newglossaryentry{glos:ensemble}{
+	name={Ensemble}, 
+	description={
+An formalized idealization of a model system, consisting of all possible repetitions of an experimental system, each of which represents a possible configuration of the system.  In formal terms, an ensemble is a probability space.  For the set of macroscopic configurations in a model system $\mathbb{G}$, with parameters ranging over possible values in $\Theta$, an ensemble is the collection: $\forall G \{ \mathbb{P}_{\theta}(G), G  \in \mathbb{G}, \theta \in \Theta \}$.  The $\mathbb{P}_{\theta}(G)$ represent the probability of each configuration $G$ occurring given selection of parameters $\theta$.  When calculating the average of a macroscopic observable measured across the entire ensemble of possible configurations, each value is weighted by $\mathbb{P}_{\theta}(G)$ }}
+
+\newglossaryentry{glos:seriationct}{
+	name={SeriationCT},
+	description={
+A Python-based framework for simulating cultural transmission models across a regional-scale metapopulation model and recording the transmission events as multi-dimensional class counts, and a series of analysis programs which allow different sampling and filtering schemes to be implemented to mimic the effects of archaeological formation processes and data recovery methods.  The software is available under an open-source license at \url{https://github.com/mmadsen/seriationct}.  
+	}
+}
+
+\newglossaryentry{glos:simupop}{
+	name={simuPOP},
+	description={
+A forward-time population genetics simulation framework developed by Bo Peng, and available under an open-source license at \url{http://simupop.sourceforge.net/}.  simuPOP is python-based, with the core written in C++ for performance, and can simulate a wide variety of forward-time population genetics models without modifications.  Additionally, the API is highly extensible, making it a very useful framework for simulating any type of cultural transmission model in which a copying function is not specific to an individual, but instead is applied at the level of a subpopulation or whole population.  
+	}
+}
+
+\newglossaryentry{glos:idss}{
+	name={IDSS},
+	description={
+Iterative Determinisitic Seriation Solutions:  an algorithm for frequency and occurrence seriation, by Carl Lipo and Mark Madsen, that operates by pruning the search space for multiple seriation solutions and building that solution set by agglomeration of smaller solutions.  \reminder{URL to DOI}.   
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% end glossary entries %%%%%%%%%%%%%%%%%%%%%%%%%

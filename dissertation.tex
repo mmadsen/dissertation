@@ -1,0 +1,233 @@
+\documentclass[letterpaper,12pt,final,openright,twoside]{memoir}
+\RequireXeTeX
+
+\newcommand{\thesisTitle}{Measuring Cultural Transmission at Archaeological Scales:  Machine Learning and Agent-Based Simulation Methods}
+\newcommand{\thesisAuthor}{Mark Ernest Madsen}
+\newcommand{\authorDegree}{\footnotesize{\textsc{M.S., Anthropology}}}
+
+
+
+\usepackage{amsmath}
+\usepackage{mathspec}
+\makeatletter % undo the wrong changes made by mathspec
+\let\RequirePackage\original@RequirePackage
+\let\usepackage\RequirePackage
+\makeatother
+
+%Date definition
+\usepackage{datetime}
+\newdateformat{yearonly}{\monthname[\THEMONTH]~\THEYEAR}
+\date{\yearonly\today}
+
+\newdateformat{pubyear}{\THEYEAR}
+
+\usepackage[osf]{mathpazo}
+\usepackage{fontspec}
+%Set fonts
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{mathrsfs} % For Cursive Fonts, dont define with mathdesign
+\usepackage{lipsum}
+\usepackage{xspace}
+\usepackage[chapter,ruled]{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{boxedminipage}
+\usepackage{fancyvrb}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\defaultfontfeatures{Scale=MatchLowercase}
+
+%Math Fixes
+\usepackage{fixmath} %Force ISO math standards
+\setmainfont[Ligatures=TeX,Numbers=OldStyle]{Minion Pro}
+\setsansfont[Mapping=tex-text]{Ocean Sans Std}
+\setmonofont{Bitstream Vera Sans Mono}
+\setmathfont(Digits,Latin,Greek)[Script=Math,Uppercase=Italic,Lowercase=Italic]{Minion Math}
+\setmathfont[range={\mathbfup->\mathup}]{Minion Math Semibold}
+\setmathfont[range={\mathbfit->\mathit}]{Minion Math Semibold}
+\setmathfont[range={\mathit->\mathit}]{Minion Math Regular}
+
+\usepackage{varioref} %extends \pageref via \vref to automate things like "on the next page"
+\usepackage[xetex,breaklinks,plainpages=false,pdfpagelabels]{hyperref}
+\usepackage[]{natbib} %For References
+\usepackage{memhfixc} %Allows Hyperref in Memoir
+% glossaries MUST be loaded after hyperref...
+\usepackage[toc,section=chapter]{glossaries}
+\makenoidxglossaries
+
+\usepackage{graphicx}
+% \usepackage[draft]{pdfpages}
+\usepackage{mdwmath} %Math alignment
+\usepackage{mdwtab} 
+\usepackage[smaller]{acronym} %acronyms package
+
+% allow more complex list environments
+\usepackage[inline]{enumitem}
+%\setlist{leftmargin=-1\labelwidth}
+
+\setenumerate[1]{label=\Roman*.}
+\setenumerate[2]{label=\Alph*.}
+\setenumerate[3]{label=\roman*.}
+\setenumerate[4]{label=\alph*.}
+
+\newenvironment{dissparalist}{\begin{enumerate*}[label=(\emph{\alph*}),before=\unskip{: }, itemjoin={{; }}, itemjoin*={{, and }}]}{\end{enumerate*}}
+%Version control with GIT
+\usepackage[footinfo]{gitinfo}
+
+
+\newcommand{\pgstyle}{Ruled}
+
+%----------------- preamble.tex -------------------
+
+\hypersetup{colorlinks,citecolor=blue,filecolor=blue,linkcolor=blue,urlcolor=blue}
+
+\maxsecnumdepth{subsubsection} %Number Subsections too
+
+% Redo for letter paper - although this might need further tweaking, it's rough
+%\settrimmedsize{279mm}{215mm}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+%\settypeblocksize{634pt}{440pt}{*}
+\settypeblocksize{8.5in}{6.5in}{*}
+\setlrmargins{*}{*}{1}
+\setulmargins{*}{*}{1}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{2\onelineskip}{2\onelineskip}
+%\setheaderspaces{*}{2\onelineskip}{*}
+\setheaderspaces{*}{*}{*}
+\setSpacing{1}
+\checkandfixthelayout
+
+% Captioning
+\changecaptionwidth
+\captionwidth{0.925\textwidth}
+
+% Float enabling
+\newsubfloat{figure} %Enable subfigures
+\pagestyle{\pgstyle}
+
+%--------------- chpstyle.tex
+
+%-----------------Book Style-----------------
+\makeheadstyles{thesis}{%
+% book changes
+\renewcommand*{\booknamefont}{\huge\sffamily\bfseries}
+\renewcommand*{\booknumfont}{\huge\sffamily\bfseries}
+\renewcommand*{\booktitlefont}{\Huge\sffamily\bfseries}
+\renewcommand*{\midbookskip}{\par\vskip 2\onelineskip}%
+% part changes
+\renewcommand*{\partnamefont}{\huge\bfseries\sffamily}
+\renewcommand*{\partnumfont}{\sffamily\bfseries\huge}
+\renewcommand*{\parttitlefont}{\Huge\bfseries\sffamily}
+\renewcommand*{\midpartskip}{\par\vskip 2\onelineskip}%
+%Chapter Style
+\chapterstyle{veelo} %Chapter Style Type (see memoir package docs)
+\setlength{\beforechapskip}{12mm} %Shorten number
+\renewcommand*{\chapnamefont}{\sffamily\bfseries\LARGE\flushright}
+\renewcommand*{\chapnumfont}{\sffamily\bfseries\Huge}
+\renewcommand*{\chaptitlefont}{\sffamily\HUGE\bfseries\flushright}
+% section
+\setsecheadstyle{\sffamily\Large\bfseries\raggedright}%
+% % subsection
+\setsubsecheadstyle{\sffamily\large\bfseries\raggedright}%
+% % subsubsection
+\setsubsubsecheadstyle{\sffamily\normalsize\bfseries\raggedright}%
+% % paragraph
+\setparaheadstyle{\normalfont\normalsize\bfseries}%
+% % subparagraph
+\setsubparaheadstyle{\normalfont\normalsize\bfseries}
+}
+\usepackage{hyphenat}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{diss-macros}
+
+\begin{document}
+
+
+
+
+
+\headstyles{thesis}
+
+\frontmatter %-----------------
+\small
+\input{frontbackmatter/copyright}
+\input{frontbackmatter/title}
+\input{frontbackmatter/front}
+
+\mainmatter %-----------------
+\normalsize
+\acresetall    %Reset acronyms
+
+\DoubleSpacing
+%%%%%%%%% Content %%%%%%%%%%%%
+
+\part{Introduction and Research Methods}
+\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+\label{part:intro}
+
+    \chapter{Introduction}
+    \label{chap:intro}
+    \input{chapters/chapter-introduction}
+    
+    \chapter{Research Methods}
+    \label{chap:methods}
+    \input{chapters/chapter-research-methods}
+
+\part{Research Papers}
+\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+\label{part:papers}
+
+    \chapter{Neutral Cultural Transmission in Time Averaged Archaeological Assemblages}
+    \label{chap:timeaveraging-paper}
+    \input{chapters/chapter-timeaveraging-paper}
+    
+    \chapter{Can We Identify Transmission Bias in the Archaeological Record:  An Investigation Using Boosted Classifier Models}
+    \label{chap:ctmixtures-paper}
+    \input{chapters/chapter-ctmixtures-paper}
+    
+    \chapter{Combinatorial Structure of the Deterministic Seriation Method with Multiple Subset Solutions}
+    \label{chap:seriationcombinatorics-paper}
+    \input{chapters/chapter-seriationcombinatorics-paper}
+    
+    \chapter{Measuring Cultural Relatedness Using Multiple Seriation Ordering Algorithms}
+    \label{chap:multipleseriation-paper}
+    \input{chapters/chapter-multipleseriation}
+    
+    \chapter{Behavioral Modernity and the Cultural Transmission of Structured Information:  The Semantic Axelrod Model}
+    \label{chap:semanticaxelrod-paper}
+    \input{chapters/chapter-semanticaxelrod-paper}
+    
+\part{Discussion and Conclusions}
+\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+\label{part:endmatter}
+
+    \chapter{Directions for Future Research}
+    \label{chap:future-research}
+    \input{chapters/chapter-future-work}
+    
+    \chapter{Conclusion}
+    \label{chap:conclusion}
+    \input{chapters/chapter-conclusions}
+
+\backmatter %-----------------
+\input{frontbackmatter/back}
+
+
+% \part{Appendices}
+% \appendix %-----------------
+% \small
+
+
+
+% \input{frontbackmatter/vita}
+
+
+
+
+\end{document}
