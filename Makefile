@@ -1,7 +1,7 @@
 .PHONY : clean
 
 pdf:
-	latexmk -pdf -pv dissertation
+	latexmk -f -pdf -pv dissertation
 
 
 
