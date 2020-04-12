@@ -15,7 +15,7 @@ complex culture \cite{BR1985, CF1981, Henrich:1998ek, Wakano:2007gq}.
 In more recent archaeological contexts, the identification of
 frequency-biased social learning has been used to support
 inferences concerning sociopolitical structure 
-in past societies \cite{kohler2004}.  Simulation and mathematical
+in past societies \cite{Kohler2004}.  Simulation and mathematical
 studies have yielded many insights into the empirical patterns we can expect from different transmission models
 \cite{Bentley2003, bentley2007regular, bentley2004random, Evans:2011vm, Mesoudi2009},
 although much of this knowledge is derived from very simplified
@@ -236,7 +236,7 @@ rate), the parameter is treated as a prior distribution and each
 simulation run is assigned a uniform random value from the range. This
 ensures good coverage of the parameter space given 25,000 replicates for
 each of the 4
-models.\footnote{The use of a good prior distribution for parameter ranges also results in simulation data that are usable for later data fitting by approximate Bayesian inference \cite{Beaumont:2010ur, Crema:2014ef, Csillery:2010jd, marin2012}.}
+models.\footnote{The use of a good prior distribution for parameter ranges also results in simulation data that are usable for later data fitting by approximate Bayesian inference \cite{Beaumont:2010ur, Crema:2014ef, Csillery:2010jd, Marin2012}.}
 
 \begin{table}[h]
 \begin{tabular}{lc}
@@ -366,7 +366,7 @@ categories.
 
 At the end of each simulation run, after the model has reached a quasi-stable equilibrium (measured as stability in per-locus trait richness), a series of samples are taken from the evolving population.  These samples are taken in ways that correspond to various real-world data collection strategies.  First, a census of the entire population is taken.  This functions as a baseline for the ``most complete'' information we can use to identify transmission modes, and there are also conditions during observational studies or in laboratory experiments where census is possible.  In archaeological studies, anything approximating a census is usually impossible, although Jonathan Scholnick's study of New England gravestones and their makers may approximate this quality of data collection \cite{scholnick2012spatial}.  Second, the simulated population is sampled, at the 10\% and 20\% levels.  Sampled data is ubiquitous in archaeological research, and although the issues involved in mapping artifact samples to their meaning for the underlying population of social learners is complex and unresolved, it is useful to determine whether the overall sample fraction has a measurable effect upon model equifinality.  
 
-Archaeological data are rarely synchronic or ``point in time'' samples of the results of human activity, and are typically aggregated over an appreciable duration of time through both data recovery conventions and formation processes \cite{grayson1998,lyman2003influence,Madsen2012TA,Porcic2014Exploring-the-E,Premo:2014jv}.  Thus, the sampled data employed in this study is also temporally aggregated over a number of time steps, and the aggregate trait counts and then used to determine the frequencies of cultural traits over the entire interval.  The population census has no temporal aggregation, and thus does represent a synchronic census.  
+Archaeological data are rarely synchronic or ``point in time'' samples of the results of human activity, and are typically aggregated over an appreciable duration of time through both data recovery conventions and formation processes \cite{Grayson1998,lyman2003influence,Madsen2012TA,Porcic2014Exploring-the-E,Premo:2014jv}.  Thus, the sampled data employed in this study is also temporally aggregated over a number of time steps, and the aggregate trait counts and then used to determine the frequencies of cultural traits over the entire interval.  The population census has no temporal aggregation, and thus does represent a synchronic census.  
 
 Time averaging is implemented according to the schematic in Fig. \ref{fig3}.  At the end of the simulation run, sampling begins at a time index calculated to allow time averaged samples to be taken twice, with a gap of 50 ``generations'' to allow the calculation of the Kandler-Shennan trait survival statistic (although unlike their original study, the values at the start and end times are inherently time averaged in this study, which would be the base in any real archaeological context) \cite{kandler2013non}.\footnote{The effect of time averaging on the start and end values used to calculate the Kandler-Shennan trait survival is not directly studied in this paper, but is a necessary component of using their method to study archaeological assemblages, I believe.}  
 

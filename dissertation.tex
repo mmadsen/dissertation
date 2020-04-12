@@ -1,7 +1,7 @@
 \documentclass[letterpaper,12pt,final,openright,twoside]{memoir}
 \RequireXeTeX
 
-\newcommand{\thesisTitle}{Measuring Cultural Transmission at Archaeological Scales:  Machine Learning and Agent-Based Simulation Methods}
+\newcommand{\thesisTitle}{Measuring Cultural Transmission at Archaeological Scales:  How Can We Improve Empirical Sufficiency?}
 \newcommand{\thesisAuthor}{Mark Ernest Madsen}
 \newcommand{\authorDegree}{\footnotesize{\textsc{M.S., Anthropology}}}
 
@@ -167,53 +167,34 @@
 \DoubleSpacing
 %%%%%%%%% Content %%%%%%%%%%%%
 
-\part{Introduction and Research Methods}
-\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
-\label{part:intro}
+\chapter{Introduction}
+\label{chap:intro}
+\input{chapters/chapter-introduction}
 
-    \chapter{Introduction}
-    \label{chap:intro}
-    \input{chapters/chapter-introduction}
-    
-    \chapter{Research Methods}
-    \label{chap:methods}
-    \input{chapters/chapter-research-methods}
 
-\part{Research Papers}
-\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
-\label{part:papers}
+\chapter{Neutral Cultural Transmission in Time Averaged Archaeological Assemblages}
+\label{chap:timeaveraging-paper}
+\input{chapters/chapter-timeaveraging-paper}
 
-    \chapter{Neutral Cultural Transmission in Time Averaged Archaeological Assemblages}
-    \label{chap:timeaveraging-paper}
-    \input{chapters/chapter-timeaveraging-paper}
-    
-    \chapter{Can We Identify Transmission Bias in the Archaeological Record:  An Investigation Using Boosted Classifier Models}
-    \label{chap:ctmixtures-paper}
-    \input{chapters/chapter-ctmixtures-paper}
-    
-    \chapter{Combinatorial Structure of the Deterministic Seriation Method with Multiple Subset Solutions}
-    \label{chap:seriationcombinatorics-paper}
-    \input{chapters/chapter-seriationcombinatorics-paper}
-    
-    \chapter{Measuring Cultural Relatedness Using Multiple Seriation Ordering Algorithms}
-    \label{chap:multipleseriation-paper}
-    \input{chapters/chapter-multipleseriation}
-    
-    \chapter{Behavioral Modernity and the Cultural Transmission of Structured Information:  The Semantic Axelrod Model}
-    \label{chap:semanticaxelrod-paper}
-    \input{chapters/chapter-semanticaxelrod-paper}
-    
-\part{Discussion and Conclusions}
-\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
-\label{part:endmatter}
+\chapter{Can We Identify Transmission Bias in the Archaeological Record:  An Investigation Using Boosted Classifier Models}
+\label{chap:ctmixtures-paper}
+\input{chapters/chapter-ctmixtures-paper}
 
-    \chapter{Directions for Future Research}
-    \label{chap:future-research}
-    \input{chapters/chapter-future-work}
-    
-    \chapter{Conclusion}
-    \label{chap:conclusion}
-    \input{chapters/chapter-conclusions}
+\chapter{Combinatorial Structure of the Deterministic Seriation Method with Multiple Subset Solutions}
+\label{chap:seriationcombinatorics-paper}
+\input{chapters/chapter-seriationcombinatorics-paper}
+
+\chapter{Measuring Cultural Relatedness Using Multiple Seriation Ordering Algorithms}
+\label{chap:multipleseriation-paper}
+\input{chapters/chapter-multipleseriation}
+
+\chapter{Behavioral Modernity and the Cultural Transmission of Structured Information:  The Semantic Axelrod Model}
+\label{chap:semanticaxelrod-paper}
+\input{chapters/chapter-semanticaxelrod-paper}
+
+\chapter{Conclusion and Directions for Future Research}
+\label{chap:conclusion}
+\input{chapters/chapter-conclusions}
 
 \backmatter %-----------------
 \input{frontbackmatter/back}
