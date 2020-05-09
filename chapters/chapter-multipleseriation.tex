@@ -2,7 +2,7 @@
 \item[\textsc{Abstract}] Seriation is a long-standing archaeological method for relative dating that has proven effective in probing regional-scale patterns of inheritance, social networks, and cultural contact in their full spatiotemporal context. The orderings produced by seriation are produced by the continuity of class distributions and unimodality of class frequencies, properties that are related to social learning and transmission models studied by evolutionary archaeologists. Linking seriation to social learning and transmission enables one to consider ordering principles beyond the classic unimodal curve. Unimodality is a highly visible property that can be used to probe and measure the relationships between assemblages, and it was especially useful when seriation was accomplished with simple algorithms and manual effort. With modern algorithms and computing power, multiple ordering principles can be employed to better understand the spatiotemporal relations between assemblages. Ultimately, the expansion of seriation to additional ordering algorithms allows us an ability to more thoroughly explore underlying models of cultural contact, social networks, and modes of social learning. In this paper, we review our progress to date in extending seriation to multiple ordering algorithms, with examples from Eastern North America and Oceania.
 
 \item[\textsc{Source}]  Submission to Electronic Symposium, ``Evolutionary Archaeologies: New Approaches, Methods, And Empirical
-Sufficiency'' at the Society for American Archaeology conference, April 2016  Co-authored with Carl P. Lipo.  Posted as Arxiv.org \url{http://arxiv.org/abs/TBD}.
+Sufficiency'' at the Society for American Archaeology conference, April 2016  Co-authored with Carl P. Lipo.  
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,7 +19,7 @@ While practitioners such as James Ford
 \citep{Ford:1938aa, Phillips1951, Ford:1935aa} noted that seriation
 techniques also create orderings which incorporate the effects of
 spatial variation in addition to temporal change, the dominant use of
-seriation in archeology has been chronological.
+seriation in archaeology has been to build chronology.
 
 As a chronological tool, seriation has been success in developing an
 understanding the large-scale temporal structure of the archaeological
@@ -31,11 +31,9 @@ dating method. But seriation is only a dating method in the sense that
 chronology is one possible inference that can be obtained by mapping the
 spatiotemporal pattern of change in cultural variants. Other inferences
 are possible, and in particular, there is a growing understanding that
-seriation is one of several methods for inferring historical and
-heritable continuity and thus documenting the evolutionary history of
+seriation is one of several methods for documenting the evolutionary history of
 past populations
-\citetext{\citealp[e.g.,][]{Lipo1997Population}; \citealp{Lipo2000}; \citealp{Lipo2001}; \citealp{Lipo2001a}; \citealp{Lipo2005}; \citealp{lipomadsen1997}; \citealp{lipomadsendunnell2015}; \citealp{Neiman1995}; \citealp[Ch.
-3]{OBrien1999b}; \citealp{Teltser1995}}.
+\citep{Lipo1997Population,Lipo2000, Lipo2001,Lipo2001a,Lipo2005,lipomadsen1997,lipomadsendunnell2015,Neiman1995,OBrien1999b,Teltser1995}.
 
 Seriation is based on the notion that the frequencies of classes of
 artifacts reflect heritable continuity when it arises from information
@@ -44,8 +42,8 @@ transmission processes. Although the fact that seriation, in some sense,
 measures cultural transmission has been implicit since the earliest
 discussions of the method \citep[e.g.,][]{Kroeber1923}, the connection
 remained a common sense generalization until the mid 1990's. Fraser
-Neiman, in his dissertation \citep{Neiman1990} and later his seminal
-1995 article \citep{Neiman1995}, noted that the unimodal patterns that
+Neiman \citeyearpar{Neiman1990}, in his dissertation and later his seminal
+  article \citep{Neiman1995}, noted that the unimodal patterns that
 form the core of the traditional frequency seriation technique are
 regularly seen in the trajectories seen when simulating unbiased
 transmission. In order to make this connection both rigorous and useful
@@ -84,8 +82,8 @@ chronological frameworks erected by culture historians in the first half
 of the 20th century using seriation along with stratigraphy and marker
 types \citep{lyman1997rise}. It is intriguing to note, however, that the
 frequency principle remains an empirical generalization that is only
-suggested by the generalized behavior of cultural transmission models,
-rather than being a necessary consequence. From Neiman's simulations
+suggested by the \emph{generalized} behavior of cultural transmission models.  Unimodality is not a necessary consequence. 
+From Neiman's simulations
 \citep[i.e.,][]{Neiman1995}, one can see that the results of cultural
 transmission are not strictly or necessarily unimodal. This possibility
 suggests to us that seriation as a method requires further
@@ -115,10 +113,8 @@ seriation approaches is that we can often apply distance minimization to
 classes and types which do not necessarily display the classical
 unimodal form, which opens seriation to wider classes of data. In
 addition, distance minimization can be formulated within large scale,
-parallel machine learning frameworks, and thus made applicable to
-contemporary data sets which are often orders of magnitude larger than
-those we face in archaeological contexts, as well as archaeological data
-sets for which frequency seriation analysis performs poorly.
+parallel machine learning frameworks, and thus made applicable to large
+data sets, increasing our ability to examine regional scale phenomena in archaeology, and making seriation useful for detailed analysis of contemporary data sets which dwarf the sample sizes typically available to archaeologists.
 
 \section{Seriation and the Frequency
 Principle}\label{seriation-and-the-frequency-principle}
@@ -208,11 +204,7 @@ interdisciplinary literature on the diffusion of innovations
 essential historically contingent pathways of culture transmission that
 produce the patterns noted by culture historians as historically
 significant. More recently archaeologists have become interested in
-developing models for individual social learning events
-\citep[e.g.,][]{Mesoudi2008a}. Individual social models, however, do not
-necessarily ``add up'' to produce a population level effect, and the
-latter is what we need to understand in order to solidly ground a
-seriation ordering algorithm in cultural transmission.
+developing models for individual social learning events (see discussion in Chapter \ref{chap:ctmixtures-paper}. 
 
 It was not until archaeologists began working with stochastic models of
 cultural transmission, however, that we could easily visualize the sheer
@@ -240,21 +232,24 @@ conform to the popularity principle.
 \label{img:neiman-fig2}
 \end{figure}
 
-The lesson of Figure \ref{img:neiman-fig2} is that there is nothing
-necessary about unimodality given cultural transmission, but that it can
-occur. But culture historical types used in seriation were
-\textbf{constructed} to yield unimodal distributions, and a key element
-in such construction is ensuring that types are composed of multiple
+Figure \ref{img:neiman-fig2} shows that there is nothing
+necessary about unimodality given cultural transmission.  Instead, culture-historical 
+classifications and typologies were constructed such that they produced compact
+spatiotemporal distributions and generally followed unimodal histories.  This is precisely
+what Krieger's \citeyearpar{Krieger1944} ``test of historical significance'' yields when applied to a candidate
+typology.
+This is accomplished by ensuring that types are composed of multiple
 dimensions of variation which co-occur on artifacts identified to that
-type. We can imagine selecting the traits shown in Figure
-\ref{img:neiman-fig2} and intersecting combinations of them to form
-multidimensional classes. In doing so, it is likely that unique
-combinations of those variants would not recur and the role of chance in
-the occurrence of combinations of traits would be minimized. Thus, such
-practices likely contribute to the presence of unimodal distributions.
-It is also likely that time averaging (ubiquitous in the archaeological
-record) smooths out some of the minor variation in variant frequencies,
-as will the vagaries of sampling archaeological deposits.
+type.  Each dimension of variation (e.g., surface treatment) may have complex histories,
+like those seen in Figure \ref{img:neiman-fig2}, but when we combine several dimensions into a class, 
+the history of the \emph{co-occurrence} of each combination of attributes becomes smoother and more 
+localized in time and space.  This process of class construction necessarily results in a 
+more compact spatiotemporal distribution for the class than for any of its constituent attributes.
+
+Unimodality further arises from the constructed classes by examining their \emph{relative} frequency over time, expressed 
+in percentages or fractions, which sum to 100\% or 1.0.  The latter constraint, which causes some combinations to be 
+relatively less numerous when others increase in prevalence, smooths the more complex variation of individual attributes
+into the histories of ``popularity'' that early twentieth century anthropologists noted \citeeg{Nelson1916,wissler1916application}.  
 
 Taken together, these factors seem to explain why the intuitive
 construction of historical types, from the continuous flow of the
@@ -303,16 +298,7 @@ classes of cultural variants. Specifically, there is strong relationship
 between the number of classes in a seriation, and our ability to map
 differences across space and time. We need methods that can evaluate
 arbitrary sets of classes to arrive at the most detailed understanding
-of cultural transmission landscapes.
-
-For example, Madsen \citeyearpar{madsenlipo2015b} is presently working
-on classifying regional interaction models by the structural properties
-they leave behind when cultural transmission is simulated on such
-regional models and then seriated. Doing this kind of detailed analysis
-requires many types and frequently, many assemblages to be successful.
-Even if unimodality suffices for rough chronology, additional ordering
-principles will be highly useful for studying regional interaction and
-the evolutionary history of technology.
+of cultural transmission landscapes (see Chapter \ref{chap:computational-metapopulation}).
 
 A theoretically sound ordering principle for seriation should be
 derivable from characteristics of the underlying cultural transmission
@@ -348,8 +334,8 @@ points in a multidimensional space of type frequencies or counts.
 Methods}\label{statistical-seriation-methods}
 
 The earliest statistical techniques for seriation were also built upon
-using interassemblage distance metrics. Brainerd and Robinson
-\citep{Brainerd1951, Robinson1951} pioneered a method for seriation
+using interassemblage distance metrics. Brainerd \citeyearpar{Brainerd1951} and Robinson
+\citeyearpar{Robinson1951} pioneered a method for seriation
 based upon the similarity between assemblages, measured as a scaled
 version of the Manhattan (or city-block) distance between assemblage
 frequencies. When these scaled distances (which became known as
@@ -360,9 +346,9 @@ provides the seriation solution. In practice, most real data matrices
 cannot be put in perfect Robinson form without violations from the
 assumptions of the seriation model.
 
-Brainerd and Robinson's pioneering work became the basis of a minor
-industry that developed methods for matrix ordering in the face of the
-practical difficulties in coercing most data sets into a perfect linear
+Brainerd and Robinson's pioneering work became the basis of large literature
+devoted to creating methods for matrix ordering in the face of the
+practical difficulties in coercing most data sets into a linear
 ordering
 \citep[e.g.,][]{dempsey1963statistical, Kendall1963, Matthews1963, Bordaz1970aa, Gardin1970, Kendall1970, Kendall1971}.
 As access to computers by researchers in the social sciences increased,
@@ -373,25 +359,33 @@ through the use of multidimensional scaling. For a detailed review of
 the many variants on this type of probabilistic seriation solution
 through the late 1970s, see \citep{Marquardt:1978aa}. Most recently
 correspondence analysis has been used with success in determining
-probabilistic seriation orders, and just as importantly, quantifying the
+probabilistic seriation orders, and even more importantly, quantifying the
 degree of departure from the ideal seriation model \citep{Smith2005}.
 
-Not all of the similarity measures used in this literature are true
-distance metrics, but many are, and there have been calls to simplify
+There have been calls to simplify
 the problem by directly minimizing inter-assemblage distance, and thus
-the total ``path length'' of a candidate seriation solution. Kadane
+the total ``path length'' of a candidate seriation solution.  Kadane
 \citeyearpar{Kadane1971} describes this approach, and it was adopted
 later by Shepardson \citeyearpar{shepardson2006} in his construction of
 the ``Optipath'' seriation algorithm, which has distance minimization at
-its core.
+its core.  We agree with Kadane and Shepardson and explore the concept in the next section.
 
 Where existing distance/similarity methods encounter a problem is the
-assumption that a seriation solution must be a single linear order. In
+assumption that a seriation solution must be a single linear order. This 
+assumption was made for two reasons.  First, seriations were seen as offering relative 
+chronology, which a linear order idealized for the analyst.  Second, even though
+practitioners understood that there was spatial variation in the histories of class frequencies, 
+there was no feasible manual method for finding more complex multidimensional solutions.  
+The advent of digital and then personal computers solved the latter problem, opening
+up the possibility of using \emph{all} of the information at our disposal about space and time
+to discover the multiple historical relationships present in our data.
+
+In
 an earlier paper, we describe a seriation algorithm (iterative
 deterministic seriation solutions, or IDSS) that finds all of the
 possible orders in a set of data that conform to an ordering principle,
 and where those orders have overlap in assemblages
-\citep{lipomadsendunnell2015}. Using this ordering principle, IDSS
+\citep{lipomadsendunnell2015}.  Using this ordering principle, IDSS
 constructs a graph with branches that recognizes that the best solutions
 may not be linear. In probabilistic approaches to seriation such as MDS
 or correspondence analysis, departures from linear solutions have always
@@ -414,7 +408,7 @@ and \(T_3\) for example, given slightly different areas of overlap in
 their type frequencies. This pattern can occur because the seriation
 method is inherently spatiotemporal, instead of simply measuring time
 (as culture historians have always known), and it can also reflect the
-splitting of populations into separate lineages (or their merger).
+splitting of populations into separate lineages or their merger (see Chapter \ref{chap:computational-metapopulation}).
 
 \subsection{\texorpdfstring{Exact Distance Minimization Ordering:
 ``Continuity''
@@ -422,7 +416,7 @@ Seriation}{Exact Distance Minimization Ordering: Continuity Seriation}}\label{ex
 
 Instead of the ``approximate'' distance minimization algorithms employed
 in multidimensional scaling, we explore exact solutions using our IDSS
-algorithm. For simplicity in the configuration of the software, we
+algorithm \citep{Lipo2015}. For simplicity in the configuration of the software, we
 summarize our approach by calling it ``continuity'' seriation, to
 distinguish it from unimodal-based frequency seriation and to emphasize
 that we want solutions that have the smoothest, most continuous
@@ -435,7 +429,9 @@ Our algorithm makes no use of the unimodality criterion, and produces
 equivalent results in almost all cases, as we show in the next section.
 The algorithm currently employs the Euclidean distance between
 assemblage counts or frequencies, although it can use any distance
-metric. The Euclidean distance has the advantage of treating each class
+metric.\footnote{We might, for example, want to explore ultrametric distances for classifications which incorporate 
+dependency structure between traits, as described in Chapter \ref{chap:semanticaxelrod-paper} and \citet{mesoudi2008learning}).}  
+The Euclidean distance has the advantage of treating each class
 as equivalent measures, a property consistent with the use of
 paradigmatic classification \citep[sensu][]{Dunnell1971} for generating
 measurement classes. Given a table of inter-assemblage distance metrics,
@@ -453,7 +449,7 @@ of partial graphs are then overlaid to form a single solution using a
 ``minmax'' approach as described in our paper on the IDSS algorithm in
 general \citep{lipomadsendunnell2015}.
 
-The general approach is the same one we take to frequency seriation;
+The general approach is the same one we take to frequency seriation in our our 2015 paper;
 what differs here with ``continuity'' seriation is how we form the set
 of candidate partial solutions. Instead of enforcing unimodality within
 each partial solution, we minimize Euclidean inter-assemblage distance.
@@ -475,19 +471,50 @@ Seriation}\label{comparing-frequency-and-continuity-seriation}
 
 In this section we compare the results of our IDSS frequency seriation
 algorithm, described in a recent paper \citep{lipomadsendunnell2015},
-and our exact distance-minimization or ``continuity'' algorithm. It is
-difficult to compare the algorithms on a very large set of empirical
-data sets, so we begin by examining a large sample of data sets
-generated by sampling simulated cultural transmission, within a regional
-metapopulation model of multiple communities. We described the overall
-model, called ``SeriationCT,'' in a conference paper last year, but we
-review the essentials here.\footnote{The SeriationCT software is open
-  source, and is located at
-  \href{https://github.com/mmadsen/seriationct}{Github}. Experiments
-  using it to generate the data analyzed here, and more network models,
-  are described and linked on
-  \href{http://notebook.madsenlab.org}{Madsen's website and lab
-  notebook}.}
+and seriations performed using exact distance-minimization or ``continuity'' algorithms.
+Ideally, we would wish for the faster distance-minimization algorithm to give the 
+same results as employing the slower, more expensive algorithm employing unimodality
+as the ordering principle.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{graphics/multipleseriation/pfg-minmax-network-both-solutions.pdf}
+\caption{Seriation solution with frequency and continuity seriation for PFG \citeyearpar{Phillips1951} ceramic assemblages in 
+the Lower Mississippi River Valley, as analyzed by Lipo \citeyearpar{Lipo2001a} and re-analyzed by \citet{lipomadsendunnell2015}.  There are no differences between frequency and continuity ordering algorithms in analyzing this set of assemblages, and thus only one graph is shown.}
+\label{img:pfg-both-solutions}
+\end{figure}
+
+To that end, we extended the Lower Mississippi River Valley example
+from our recent work \citep{lipomadsendunnell2015} by comparing
+frequency and continuity seriation algorithms on the same set of
+assemblages.  The result is
+depicted in Figure \ref{img:pfg-both-solutions}. The result is identical
+-- the two solutions are isomorphic.  
+
+We are archiving seriation data sets, with supporting information including geography 
+if available, and licenses (if available
+and required) in an open-source repository on Github:  \url{https://github.com/mmadsen/seriation-datasets}.  Over time we expect to be able to employ the data sets to create automated
+test suites for new seriation algorithms and software implementations.  We are also adding scripts
+which execute our IDSS software for any of its implemented algorithms, for the data sets.  We welcome 
+contributions to the data repository (please contact Madsen for more details).  
+
+Empirical data sets suitable for determining comparable the two seriation algorithms might be are hard to come by,
+and typical cases have a small number of assemblages, which tend to yield small linear seriations without complex 
+structure.  Thus, we also employ a Monte Carlo or simulation approach to sampling many possible seriations, 
+performing both frequency and continuity on sampled data, and comparing the structure of the resulting seriations.
+We employed the \emph{SeriationCT} simulation framework described in detail in Chapter \ref{chap:computational-metapopulation}
+to generate samples of simulated cultural transmission, with time averaging, on realistic metapopulation-style models
+of regional interaction.  The simulations were performed for purposes of examining whether seriations can be 
+diagnostic of the evolving social networks within which cultural transmission occurred in the past.  For purposes
+of the present study, however, the simulation results presented an opportunity to compare ordering algorithms.
+
+Because the ``lineage splitting'' transmission scenario (described in Chapter \ref{chap:computational-metapopulation}, in Section 
+\ref{metapop:sec:transmission-scenarios}) yielded seriation graphs with detailed branching structures, it presented a more 
+conservative comparison than the complete networks, which had a much higher incidence of straight linear orderings.  Thus,
+we randomly sampled 50 simulated data sets from the lineage splitting model, and performed seriations with our IDSS software, using both frequency (unimodality) and continuity (distance minimization) settings.
+
+
+
 
 Seriation of artifact assemblages is inherently a regional-scale
 problem, whether for chronology or tracking interaction and social
@@ -501,155 +528,7 @@ contacts evolves over time. Social network or graph models, especially
 weighted graphs, form an essential ingredient for this type of modeling,
 but need to be extended to the temporal dimension.
 
-Extending networks for modeling time-transgressive change employs
-so-called ``temporal network models,'' which record the changing
-structure a network or graph over a series of time points
-\citep{Holme2012}. For our purposes, ``interval'' temporal networks are
-the right abstraction. Such graphs represent interactions that occur and
-persist over a measurable duration as edges that carry time indices.
-Interval graphs can be modeled mathematically in a number of ways, but
-in an algorithmic setting the most convenient is to define a sequence of
-separate graphs, where each graph \(G_t\) in the sequence represents one
-or more change events within the network between times \(t\) and
-\(t + \delta t\) (where \(\delta t = t+1 - t\)). In a fully continuous
-temporal representation, each graph in the sequence specifies a single
-change event, and thus is equivalent to the way that a continuous-time
-stochastic process represents events. In situations where our
-observations are coarse grained due to time averaging or recovery
-methods (or both), each graph in the sequence may represent a number of
-change events which occur over the duration assigned to that graph in
-the sequence.
-
-Change events encompass anything that modifies the graph. Vertices may
-be added or removed, and edges may be added or removed. In addition to
-addition and removal, if the graphs in the sequence are weighted, slices
-may record events where the strength of an edge changes, without other
-topological changes to the graph. If other attributes are present on
-vertices or edges (e.g., labeling edges for a type of interaction),
-changes to those labelled attributes would also constitute a change
-event and would be recorded by a graph in the sequence with changed
-attribute values. An interval temporal network is thus defined as an
-ordered set of graph ``slices,'' each slice associated with a time
-index. The changes themselves can be found by ``subtracting'' two graph
-slices and obtaining lists of vertex and edge changes.
-
-Constructing a time-transgressive regional metapopulation from an
-interval temporal network occurs by giving interpretations to vertices,
-edges, and other attributes of the graph. In our research, vertices
-represent communities of individuals, with population sizes which may
-change or not over time. Edges represent the presence of interaction
-between two communities, which could represent learning between
-individuals, or migration of individuals bringing portions of a cultural
-repertoire between communities. The weight given to an edge is typically
-a relative measure of interaction betweeh communities, normalized by the
-rest of the communities, since there is no good way in a simple
-structure like this to model the absolute intensity of such interaction.
-When communities come into existence, by members of an existing
-community founding a new settlement, a vertex is added to the network
-and it acquires connections to other communities (according to the class
-of model we are constructing). Similarly, communities may go away over
-time, and the vertex is then removed. Interaction patterns may change as
-well, resulting in the addition or removal of edges over time, or change
-in the edge weights.
-
-For example, we can create a model whereby two clusters of communities
-are tightly interconnected internally, and have some sparser
-relationship between the clusters, and slowly lose that interconnection
-to become separate, non communicating lineages, using a model similar to
-that shown in Figure \ref{img:itn-example}.\\
-The third and fourth columns in the figure describe the change events.
-The third describes changes to the network structure in each time slice,
-and the fourth describes the interpretation of those structural changes
-in terms of a regional metapopulation model.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.25]{graphics/multipleseriation/interval-temporal-network-with-interpretation.pdf}
-\caption{Example of an interval temporal network interpreted as a regional metapopulation model, with vertices representing communities, weighted edges representing intensity of interaction and migration, and changes in each representing their respective evolution over time.}
-\label{img:itn-example}
-\end{figure}
-
-Interval temporal networks, interpreted as regional metapopulation
-models, thus form a basic tool for modeling many classes of regional
-histories and interaction patterns. For purposes of comparing frequency
-and our continuity seriation algorithms, we focus on a regional model of
-the type depicted in Figure \ref{img:itn-example}, but with a larger
-number of communities than shown. In that model, four clusters of
-communities start out at the beginning of the time period under
-consideration being tightly interconnected within each cluster, and more
-loosely connected among the four clusters. At any given time, each
-cluster has 8 communities spread over a geographic area, so with four
-clusters, there are 32 communities in the region under consideration. At
-a late point in the time interval under consideration, the connections
-between pairs of clusters is removed, creating two non-interacting sets
-of community clusters, to model the origin of separate ``lineages'' of
-cultural transmission in a region.\footnote{This model is available for
-  inspection as a set of GML network files in experiment ``sc-2'' in the
-  \href{https://github.com/mmadsen/experiment-seriation-classification}{experiment-seriation-classification}
-  repository maintained by Madsen. That experiment focused on
-  differentiating different classes of lineage-splitting or coalescence
-  models through their seriation solutions, and here I focus only on the
-  data resulting the ``early lineage splitting'' model.}
-
-Given this model of interaction between communities, we then simulate
-the standard unbiased cultural transmission model across this network.
-The changes specified by the temporal network guide the addition of new
-subpopulations or their demise in the model, and the edge weight pattern
-defines migration of individuals between communities, and thus the
-possibility of cultural variants flowing between communities. Simulation
-of transmission occurs for 12,000 time steps, with the change events
-occurring regularly over that interval, creating change in interaction
-over time as social learning proceeds.
-
-During the evolution of the model, we record the frequencies of
-individual variants, and their co-occurrence to mimic archaeological
-classes or types which are defined by multiple dimensions of variation.
-Recording of frequencies occurs within each of the 32 communities
-present at any given point in time, so we can measure spatial and
-temporal variation in cultural variants. For purposes of the experiments
-reported here, we sample innovation rates from a prior distribution
-which allows any given simulation run to have a very low innovation
-rate, through relatively high innovation rates.\footnote{The details of
-  the prior parameter distributions are relatively unimportant for
-  purposes of comparing seriation algorithms, but are found in the
-  \href{https://github.com/mmadsen/experiment-seriation-classification}{experiment-seriation-classification}
-  repository under experiment SC-2 in the file
-  ``seriationct-priors.json''.}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.4]{graphics/multipleseriation/seriationct-high-level-flow.pdf}
-\caption{Processing steps in simulating cultural transmission on a regional metapopulation model of lineage splitting, to compare seriation ordering algorithms.}
-\label{img:seriationct-flow}
-\end{figure}
-
-Following simulation and data recording, the raw data are processed in
-ways that mimic the time averaging that occurs in archaeological
-deposits, and the sampling that archaeologists do when taking surface
-collections from such aggregated deposits. This chain of processing is
-depicted in Figure \ref{img:seriationct-flow}. First, recorded cultural
-variants are aggregated for each community across the simulated time
-that community existed, so that all variant frequencies are time
-averaged in the manner described and modeled by Premo
-\citeyearpar{Premo2014} and Madsen \citeyearpar{Madsen2012}. Then, from
-the time averaged data for each community, an assemblage of 500
-simulated artifacts is drawn from the raw data. This has a tendency to
-represent common variants well, and capture some but not all rare
-variants. From this sampled data, we then take a sample of the available
-communities, since seriations are always performed on a sample of
-archaeological deposits selected by the archaeologist (whether in
-rigorous or ad hoc ways). Finally, we filter the types present in each
-group of assemblages, to remove those types which are present only in
-one assemblage (as one would do in a manually constructed seriation),
-since those types do not contribute to ordering.
-
-The resulting set of assemblage-level type frequencies were then fed
-into our IDSS seriation program, asking it to produce both a frequency
-seriation using unimodality as the ordering criterion, and a continuity
-seriation, using exact distance minimization as the ordering criterion.
-We did this for 50 simulation runs with different parameters across the
-``lineage splitting'' regional model described above, and compared the
-resulting seriation solutions. We measure whether frequency and
+We measure whether frequency and
 continuity solutions are identical by testing whether the solution
 graphs are isomorphic, which means that the same vertices are connected
 to the same neighbors by the same edges. Of the 50 simulation runs
@@ -704,7 +583,7 @@ In the frequency solution it occurs ``inline'' while in the continuity
 solution, interassemblage distance is minimized by removing it to a
 small branch of its own.
 
-\begin{table}[ht]
+\begin{sidewaystable}[p!]
 \centering
 \begin{tabular}{@{}llllllllll@{}}
 \toprule
@@ -726,7 +605,7 @@ assemblage-402-995  & 106               & 65    & 0     & 29                & 0 
 \end{tabular}
 \caption{Raw data for frequency seriation for simulation run f8a6f378, grouped into blocks corresponding to the branches of the solution graph}
 \label{f8a6f378-freq-table}
-\end{table}
+\end{sidewaystable}
 
 Viewed in traditional tabular view of the type counts in Tables
 \ref{f8a6f378-freq-table} and \ref{f8a6f378-cont-table} or as
@@ -742,7 +621,7 @@ the same overall structure. To us, this shows that unimodality is
 sufficient but not necessary for using a seriation method to track the
 spatiotemporal structure of cultural transmission.
 
-\begin{table}[ht]
+\begin{sidewaystable}[p!]
 \centering
 \begin{tabular}{@{}llllllllll@{}}
 \toprule
@@ -764,7 +643,7 @@ assemblage-618-780 & 123 & 50 & 0 & 164 & 121 & 0 & 13 & 0 & 14 \\ \bottomrule
 \end{tabular}
 \caption{Raw data for continuity seriation for simulation run f8a6f378, grouped into blocks corresponding to the branches of the solution graph}
 \label{f8a6f378-cont-table}
-\end{table}
+\end{sidewaystable}
 
 \begin{figure}[ht]
 \centering
@@ -780,33 +659,6 @@ assemblage-618-780 & 123 & 50 & 0 & 164 & 121 & 0 & 13 & 0 & 14 \\ \bottomrule
 \label{img:continuity}
 \end{figure}
 
-\subsection{Multiple Seriations for Phillips, Ford and Griffin (1951)
-data}\label{multiple-seriations-for-phillips-ford-and-griffin-1951-data}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.5]{graphics/multipleseriation/pfg-minmax-network-both-solutions.pdf}
-\caption{Seriation solution with frequency and continuity seriation for PFG \citeyearpar{Phillips1951} ceramic assemblages in 
-the Lower Mississippi River Valley, as analyzed by Lipo \citeyearpar{Lipo2001a} and re-analyzed by \citet{lipomadsendunnell2015}.  There are no differences between frequency and continuity ordering algorithms in analyzing this set of assemblages, and thus only one graph is shown.}
-\label{img:pfg-both-solutions}
-\end{figure}
-
-Simulations of cultural transmission may give us the ability to probe
-the consequences of altering a model, and simulations are very useful
-for developing large samples of seriation solutions and understanding
-their properties. But simulations do not replace seriations of real
-data. To that end, we extend the Lower Mississippi River Valley example
-from our recent work \citep{lipomadsendunnell2015} by comparing
-frequency and continuity seriation algorithms on the same set of
-assemblages.\footnote{We are archiving seriation datasets, with
-  supporting information, licenses if available, and often with
-  accompanying geographic information, and scripts to perform seriations
-  on the data using our IDSS program, in the
-  \href{https://github.com/mmadsen/seriation-datasets}{seriation-datasets
-  repository} in Github. If you would like to contribute a dataset,
-  please contact Mark Madsen or send a pull request.} The result is
-depicted in Figure \ref{img:pfg-both-solutions}. The result is identical
--- the two solutions are isomorphic.
 
 \section{Discussion}\label{discussion}
 
