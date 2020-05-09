@@ -1,137 +1,87 @@
-\begin{description}[leftmargin=-1\labelwidth]
-\item[\textsc{Abstract}] \lipsum[1] 
 
-\item[\textsc{Source}]  Posted to Arxiv.org (\url{https://arxiv.org/abs/TBD}), in July 2019.  
-\end{description}
+\section{Introduction}\label{ctmixtures:sec:introduction}
 
+The emerging field of cultural evolution is the study of cultural change in humans and other animals as a Darwinian evolutionary process, and encompasses research in biology and the social sciences.  As part of an ``extended synthesis’’ \citep{Pigliucci2010}, cultural evolution extends  the notion of ``descent with modification’’ to include the learning and accumulation of cultural information between generations, and explicit study of the differences in structure and pattern between genetic and cultural transmission.  Beginning with the seminal work by Cavalli-Sforza and Feldman 
+\citeyearpar{CF1981} and later by Boyd and Richerson \citeyearpar{BR1985}, the study of these differences has focused a great deal of attention on cognitive and psychological biases that create population structure.  Over the past thirty years experiments, observational studies, and theoretical models have come together to create a picture of human social learning which is biased towards conformity under many circumstances and the observation of success, positive payoffs, and social prestige as a basis for selecting those from whom one learns or imitates \citeeg{richerson2005not}.  
 
-\section{Introduction}\label{introduction}
+Most of the evidence for this emerging picture of human social learning comes from controlled experiments and observational studies of living populations.  Most of it is conducted by psychologists and anthropologists \citep{whiten2016cultural,mesoudi2016evolution}.  Archaeologists and paleoanthropologists seeking to study the evolutionary history of social learning are consumers of this body of theory.  There is nothing wrong with being a consumer of evolutionary theory---every discipline involved in applying Darwinian insights to human social behavior is a consumer in some area---but we must also be producers of methods needed apply that theory to the unique empirical phenomena we study.  Our job consists, at a high level, of building methods for constructing models appropriate to the kinds of data we possess, understanding how to best to assess the fit between those models and our data, and finally, understanding the limits of our ability to do so given the nature of the empirical phenomena we study.  
 
-A major use of cultural transmission models in archaeology is inference
-regarding the mode of transmission operative within past populations.
-Identifying cognitive biases is central, for example, to several
-hypotheses for the origin of cumulative cultural transmission and
-complex culture \cite{BR1985, CF1981, Henrich:1998ek, Wakano:2007gq}.
-In more recent archaeological contexts, the identification of
-frequency-biased social learning has been used to support
-inferences concerning sociopolitical structure 
-in past societies \cite{Kohler2004}.  Simulation and mathematical
-studies have yielded many insights into the empirical patterns we can expect from different transmission models
-\cite{Bentley2003, bentley2007regular, bentley2004random, Evans:2011vm, Mesoudi2009},
-although much of this knowledge is derived from very simplified
-population models.  In particular, theoretical analyses of transmission models  have ignored until recently the effect of data collection methods and coarse-grained observations on the patterns we should expect in archaeological data.  As a result, we simply do not know whether the mode of transmission can be reliably inferred from samples of the archaeological record, if it is possible at some time scales but not others, or how we might tailor data collection strategies to maximize the accuracy of such inferences.
+This paper addresses the limits of our ability to select among detailed, individual-level models of cultural transmission in most archaeological situations.  Initial optimism applying mathematical models of cultural transmission to archaeological data \citeeg{Neiman1995,eerkens2005cultural,Lipo1997,shennan2001ceramic,Jordan2003} has given way to a more nuanced view of our ability to discriminate between models \citep{barrett2019equifinality,premo2010equifinality,kandler2019analysing}.  A growing body of work is aimed at assessing the causes of equifinality between cultural transmission models given archaeological data, for example assessing the effects of time averaging \citep{Madsen2012,Porcic2014,Premo2014,perreault2018time} and non-stationary population sizes \citep{Rorabaugh2014,kandler2018generative}.  The hope is that methodological development will help us understand, and correct for, these sources of equifinality so that we can proceed with ``model selection'' and fitting (albeit in a more sophisticated way) and still work with the kinds of transmission models that other anthropologists and social psychologists employ (especially those derived from Boyd and Richerson's seminal work on ``dual inheritance theory'').  
 
+There is no question that we can empirically detect different types of social learning modalities in controlled experiments \citep{Kempe2014a,mesoudi2006bias,whiten2016cultural,mesoudi2008cultural,Mesoudi2008a,Kempe2014,Mesoudi2014}.  Experiments and detailed observational studies of living populations generate fine-grained data about who individuals learn from and what covariates affect ``chains'' of transmission.  Archaeologists, even in the best of circumstances, always face data which is coarse-grained compared to  that available in experimental settings.  To one degree or another, the data we generate from archaeological deposits are estimates of some population-level prevalence of cultural traits.  
 
-We do know that the coarse graining of observable variables that occurs given time averaging reduces our ability to distinguish between
-unbiased and biased transmission models
-\cite{Madsen2012TA, Porcic2014Exploring-the-E, Premo:2014jv}, that non stationary
-population sizes reduce our ability to infer transmission modes \cite{Rorabaugh:2014fl}, and that
-diachronic statistics and non equilibrium models are better than
-synchronic measures and equilibrium models 
-\cite{kandler2013non, wilderkandler2015}.  The effect of these factors is such that when deposits are highly time averaged, equifinality occurs, with different models yielding the same empirical distributions despite describing different underlying processes \cite{von1949problems}. Equifinality between
-theoretical models is a serious concern whenever we study complex
-systems, and has been discussed in geomorphology, hydrology,
-climatology, and within archaeology itself
-\cite{Aronica:1998dm, Beven:2006js, Bonham:2009bi, Cicchetti:1996gp, 
-Culling:1987kx, Marean:1992hg, Rogers:2000bq, Savenije:2001fe}.
-If models which represent different modes of cultural transmission
-cannot be distinguished when we include aggregation, heterogeneity, or sampling in our models,
-then there may be questions concerning past cultural transmission that
-we cannot answer.  As a result, there may be classes of models which are useful for contemporary or historical 
-research, but not for the coarse grained scales of observation that archaeologists often confront.
+Understanding the limitations of using coarse grained data to perform model selection is crucial for archaeology and paleoanthropology,   The main approach to identifying the best fit cultural transmission model for a data set has been to construct univariate statistical tests or distributional expectations for various summary statistics.  Examples of summary statistics employed in this model fitting approach include richness or diversity (evenness) measures, the average amount of time traits survive in a population, their turnover properties, or the degree to which frequency data match distributions known to arise in various “null” models \citep{Shennan2001,shennan2008style,Bentley2003,shennan2008style,Kandler2013,Kandler20150905}.  These statistics are highly attractive for archaeological purposes because most are easy to calculate from standard descriptions of archaeological assemblages without additional measurements on individual artifacts and thus allow the study of previously described data sets.  
 
-Existing theoretical studies have almost exclusively focused upon distinguishing
-models based on the ability of a single statistic or variable to
-distinguish the distribution of outcomes from different social learning
-modes. Scores from the power law exponent
-in a log-log plot of trait frequencies have received the most attention along with more recent application of neutrality tests \cite{Bentley2003, bentley2004random, Mesoudi2009, slatkin1994exact, slatkin1996correction}.   
-More recently, Kandler's work has demonstrated that diachronic measures such
-as trait survival time, or the length of time the most common trait
-stays ranked the most common, can be robust predictors of different
-classes of transmission models
-\cite{kandler2013non, wilderkandler2015}. 
-But there is little reason to suspect that single statistics will be adequate in most cases to cleanly separate and identify different transmission models, given the strong convergence in distribution that characterize diffusion processes.  Instead, we should expect that statistical models employing multiple predictors would be the best discrimination tools, if any exist for a set of transmission models.  In this paper, I employ
-a robust machine learning classifier algorithm and multiple ways of measuring
-trait richness, diversity, and survival times to test whether
-equifinalities exist between various combinations of unbiased and biased
-transmission rules when measurements come from realistic data collection
-scenarios.\footnote{Throughout this paper, I used ``classification'' in the statistical and machine-learning sense of a statistical model whose dependent variable is a binary or discrete value, such that the model predicts which value a data point takes from a labeled set.  Archaeologists will be used to using the term in the sense of systematics and taxonomy, which is not the intent here.}
+This approach has now been employed in enough studies, and with enough replications on the now-paradigmatic ceramic data from the European Neolithic Merzbach Valley, that we can evaluate its performance.  Kandler \citeyearpar{Kandler20150905} notes that after five separate analyses of the Merzbach data using a variety of summary statistics and approaches, the results remain in conflict.  It is not clear whether the data are consistent with a hypothesis of neutrality, or anti-conformity/novelty seeking, or whether both are reflected in different assemblages.  
 
-The results indicate that while neutral and biased transmission models
-can be distinguished very accurately given measurements from entire
-populations taken when no temporal aggregation occurs, the introduction of
-sampling and the interaction between sampling and time averaging
- markedly degrades our ability to distinguish these transmission
-rules. Furthermore, the degradation is not symmetric. With sampled, time
-averaged data, we are extremely likely to conclude that samples
-represent biased transmission, even when this is not the case. Other
-mixtures of conformist and anti-conformist transmission rules are even
-less distinguishable given time averaging and limited samples.  As a result, I conclude that it may be difficult or impossible to infer the details of cognitively biased transmission rules from frequency data alone, when we lack data from an entire population and when only coarse grained, aggregated data are available.
+There has been much less focus on the crucial question of whether some of the equifinality we face is simply structural.  By ``structural'' equifinality, I mean that the models we expect to be able to identify cannot be distinguished because they overlap too strongly in their outcomes, with any possible data we can obtain.  This paper is an attempt to outline a major cause of structural equifinality in cultural transmission modeling:  the inherent variability of social learning modes within real populations.  The simulation experiments reported here seek to understand whether individual variability in cultural transmission and social learning strategies renders our models impossible to distinguish given coarse grained data, and what effects that sampling and time averaging have on our ability to distinguish the true data generating process behind our data.
 
-\section{Analysis}\label{analysis}
+This study employs simulation from several data generating models, and employ multiple summary statistics and a powerful machine learning classifier capable of finding highly nonlinear decision boundaries to determine whether it is even possible to discriminate between our theoretical models.  If we can, then it is reasonable to expect that further methodological research on ways to ``correct'' or avoid sources of equifinality may be fruitful.  If we cannot distinguish between models, even in the idealized case, then I believe we must question the utility of attempting to perform the kind of microevolutionary model fitting that many of us have been attempting with archaeological data.  
 
-\subsection{Reducible and Irreducible Equifinality Among Transmission
-Models}\label{measuring-equifinality-among-transmission-models}
+The results indicate that populations with mixtures of bias can be distinguished from a reference population of unbiased copiers very accurately given a full population census and the absence of time averaging.  In this sense, equifinality between these theoretical models may not be structural even with coarse-grained data.  However, the introduction of sparse sampling and the interaction of sampling with time averaging markedly degrades our ability to accurately classify samples as to their model of origin.  Furthermore, the pattern of errors is not symmetric.  With sampled, time averaged data, we are extremely likely to conclude that samples represent various kinds of transmission bias, even when this is not the case.  
 
-Equifinality among cultural transmission models can arise from several sources. First, equifinality may occur because of our measurement and analysis
-procedures. There is growing evidence, for example, that assemblage
-duration affects our ability to distinguish biased from neutral
-transmission across a variety of statistical predictors
-\cite{Madsen2012TA, Porcic2014Exploring-the-E, Premo:2014jv}. Equifinality among transmission models is thus possibly reducible by collecting finer-grained samples during fieldwork, if deposits are well stratified.  However, in situations where the depositional environment actively creates temporal aggregation (e.g., in the plowzone, or in deflated aeolian contexts), there may be little that an investigator can do to improve the temporal resolution of data collection.  And when we employ published data sets, obviously we cannot easily subdivide the data into assemblages finer than the original investigation supported.  When studying living populations, of course, equifinalities may be addressed by converting a purely observational study to a controlled experiment in some cases \cite{kempe2014experimental, mesoudi2014experimental, schillinger2014copying},
-but of course this is not an option in archaeological contexts.
+This result deepens the skepticism we should feel as archaeologists about the ability to apply detailed social psychological models to most archaeological data.   Instead of attempting to adapt our data so that we can apply microevolutionary models, we may be better off adapting our models to the data and empirical record we actually possess.  This means looking at coarser grained models and coarser grained research questions which may better match the unique strengths of a diachronic, aggregated record of human evolution.  
 
-Second, equifinality is partially determined by the predictors or variables we use in trying to separate the behavior of models.  Fig. \ref{fig1} shows an artificial example with two distributions, measured on two variables.  The marginal distribution of each variable demonstrates how models might be distinguishable given one variable (Y axis) but not another (X axis).  In the published literature on transmission modes, single variables are usually examined, but we gain huge power by considering statistical models with multiple variables.  
+\section{Within Population Variation in Social Learning:  A Cause of Structural Equifinality?}\label{ctmixtures:sec:structural-equifinality}
 
+The microevolutionary models of cultural transmission we typically employ in archaeology draw structurally upon the mathematical core of classical population genetics, but add inheritance structures and social learning modes informed by observations across the social sciences \citep{CF1981,BR1985}.  The core models in dual inheritance theory richly vary in the cognitive biases they describe, but all still tend to ignore significant sources of population structure or variation.  All tend to assume \emph{panmixia} as a simplifying assumption, and most tend to depict the population-level consequences of sets of individuals who employ a single learning mode or class of cultural ``parent'' to learn from \citep{wimsatt2019articulating}.   
 
-\begin{figure}
-	\caption{Simple example of the effect of variable choice in distinguishing models.  The variable on the X axis displays quite a bit of overlap between models, while the variable on the Y axis distinguishes the models with fairly high accuracy.}
-	\label{fig1}
-\end{figure}
+Real populations, as opposed to those depicted in much of our modeling, have rich structure.  Human populations are mixtures of people of different ages, genders, and propensities for individual versus social learning.  There also appears to be variation among populations and major cultural lineages in these mixtures of social learning traits.  Detailed experimental and observational studies are just beginning to document this variation \citep{whiten2016cultural,yaveroglu2002cultural,tweed2002learning,chang2011cultural,enquist2007critical,csibra2009natural,tomasello2016ontogeny,lopez2010attention,berl2015cultural,mesoudi2015higher,mesoudi2016evolution}  People can vary in these propensities over the course of their lifetimes \citep{lehmann2013optimal,demps2012social,correa2009children,mesoudi2016evolution}, making demographic factors important in modeling the population-level effects of individual social learning processes.    
 
-Not all equifinalities may be reducible.  The statistical distributions generated by diffusion processes can be highly convergent among related models, and almost all cultural transmission models are, at base, diffusion processes. This type of equifinality is \textbf{irreducible}, and is not solved by changing how we perform the analysis or by changing data collection. Irreducibly equifinal
-models form an \textbf{equivalence class} of models that we cannot
-distinguish given our data. Instead, all we can say is that our data
-could have been generated by any of the models in the equivalence class.  
-If the equivalence classes of equifinal models are coarse enough (at worst, if they 
-form a single group), then we cannot meet our original inferential goals at all. 
+Even if different ways of learning from parents and peers are distinguishable from individual level data, we should not automatically assume that their population level consequences are distinguishable, when there is variation in the population.  Processes which are distinguishable with transmission chains, for example, may have opposing effects on population-level summary statistics.  A population comprised of conformists who prefer to learn and stick with the ways that have worked in the past would tend to display fewer variants in the population than expected in a neutral equilibrium, and more concentration of frequency on a small number of traits.  A population comprised of those who prize novelty and exploration of ``new'' traits will tend to display more variants than expected, with more evenness among trait frequencies.  A real population that combines individuals with both propensities 
+would display a mixture of these population-level consequences.  In other words, some of the effects easily visible at the individual level may ``cancel out''.  If that is the case, can we distinguish a mixture of these social learning biases, from a population of unbiased copiers?  
 
-In some cases, irreducible equifinalities can become reducible given advances in measurement technologies that open up new sets of predictor variables.  After his seminal works of the 1970's on drift and the infinite-alleles neutral model, Warren Ewens stopped working on neutrality tests because tests using allele count data lack statistical power.  Ewens moved to studying the population genetics of human diseases instead \cite{plutinski2004}, recognizing that further progress would require sequence data unavailable at the time.  This judgment proved accurate:  a new suite of neutrality tests did arise starting the late 1980's and 1990's when sequence data became widely available \cite{fu1993statistical,tajima1989statistical}.     
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[scale=0.5]{graphics/ctmixtures/equifinality-transmission-bias-scenarios.pdf}
+  \caption{Two scenarios for how equifinality may affect our ability to empirically distinguish between different models of cultural transmission given the effects of sampling and time averaging.}
+  \label{ctmixtures:fig:equifinality-scenarios}
+  \end{figure}
 
+This question becomes even more concerning when we combine the “structural” possibility of equifinality just described with the “methodological” sources of equifinality previously discussed:  sampling and the time averaging characteristic of aggregated, time transgressive data.  This question is depicted schematically in Figure \ref{ctmixtures:fig:equifinality-scenarios}.  In the left panel, under mild to moderate amounts of time averaging and with reasonable sample fractions, our ability to discriminate between models may be relatively strong, with equifinality restricted to situations with small sample size and in assemblages with significant duration.  The right hand panel depicts the other end of a continuum of possibilities:  our ability to identify transmission models given data might be quite rare across a range of values relevant to archaeological inquiry.  This paper is an attempt to determine where we might stand between these two poles.  Given even simplified models of mixed social learning processes, can we tell apart their population level consequences, especially with limited samples and in the presence of time averaging?
 
-\subsection{Equifinality As Classification Error}
+\section{Methods}\label{ctmixtures:sec:methods}
+
+\subsection{Study Design}\label{ctmixtures:sec:study-design}
+
+I approach this question by simulating populations with mixtures of social learning or transmission biases.  In particular, I examine populations comprised of mixtures of conformist and anti-conformist individuals, along with a ``reference'' population of unbiased copiers \citep{BR1985}.  The simulated populations are censused at sampling intervals and trait counts recorded.  This allows us to later perform a variety of ``data collection regimes'' which simulate the effects of archaeological sampling and the time averaging effects of aggregate deposition in the archaeological record.  It also allows analysis at the single trait level, or the composition of traits into ``classes'' which simulate the effects of archaeological classification, since most efforts to fit cultural transmission models to real data have accepted existing classification schemes as input to the model fitting.  
+
+The output of the simulation runs are simulated archaeological observations of trait or class frequency count at a variety of levels of sample size and time averaging ``treatments'' from the same underlying data generating processes.  This allows us to examine our ability to distinguish between data generating processes depending upon the ``treatment'' levels, given a method for predicting which data generating process produced the data points observed.  In the next section, I describe a predictive modeling approach, adopted from machine learning, for measuring equifinality as error in properly predicting the known data generating process for our simulated data.  
+
+\subsection{Measuring Equifinality Through Classification Error}
 \label{sec:equifinality-classification-error}
 
-Since our evolutionary models of cultural transmission are stochastic, and generate a variety of outcomes for the same parameter values, I take a statistical approach to examining equifinality of transmission models in archaeological data.  Transmission modes are separable and thus identifiable in archaeological data if the distribution of model outcomes are non-overlapping, when measured in a space created by a set of predictor variables.  With stochastic models like the ones currently used by archaeologists, the most efficient method of studying the outcome distribution is to simulate values from the model, and examine our ability to correctly predict which model generated each data point, given a function of the predictor variables.  
+The common models of cultural transmission employed by archaeologists are stochastic in nature, and thus when we take samples from simulations of those models, we will observe a distribution of results for any summary statistic we choose to observe.   To the degree that several models generate separable distributions for the chosen summary statistics, we will be able to infer the most probable data generating model given values of those statistics.  If the distributions of summary statistics have some overlap, the level of certainty with which we can predict the correct data generating model will decline overall, and perhaps be no better than chance in the region of overlap.  
 
-This general approach can be visualized as in Fig.
-\ref{fig2}. Here, three pairs of probability models
+This generic situation is shown schematically in Fig.
+\ref{ctmixtures:fig:distributional-scenarios}. Here, three pairs of probability models
 are represented by 500 measurements each of two continuous predictors variables (e.g., a diversity index).
 In the left panel, the pair of models do not overlap in their outcomes.
 Given a data point, we can assign it to Model 1 or Model 2 with
 virtually no error, and thus we would consider models 1 and 2 to be
 distinct and not equifinal at all. The situation in the middle and right
-panels of Figure \ref{fig1} is different. There is
+panels of Figure \ref{ctmixtures:fig:distributional-scenarios} is different. There is
 some overlap in the middle panel, and very strong overlap in the right
 panel. In the right hand panel, in fact, there is enough overlap that on
 average, our ability to assign a randomly chosen data point to the
 correct model is no better than chance. Intuitively, we would say that
 there is some equifinality in the middle panel, and that the two models
-were strongly equifinal in the right hand panel.
+in the right hand panel were strongly equifinal.
 
-\begin{figure}[h]
-\caption{Simple example of model outcomes with different degrees of distinguishability: (A) simulated data point from two fully separate models, (B) two models with a limited overlap region, (C) and two models whose outcomes are highly overlapping.}
-\label{fig2}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.6]{graphics/ctmixtures/distributional-overlap.pdf}
+\caption{Simple example of model outcomes with different degrees of distinguishability given two summary statistics: (A) simulated data points from two fully separate models, (B) two models with a limited overlap region, (C) and two models whose outcomes are highly overlapping.}
+\label{ctmixtures:fig:distributional-scenarios}
 \end{figure}
 
+Measuring the overlap between the measured outcomes of theoretical models thus provides a way to determine their inherent or structural equifinality given a set of observable summary statistics or observational variables.  When theoretical models are simple enough to have solvable equations, it may be possible to perform an analysis of distributional overlap using mathemetical tools such as the Kullback-Leibler divergence between their resulting probability distributions \citep{burnham2002model}.  In the kind of cases discussed in this paper, with mixtures of social learning modes in a single simulated population, we need a numerical and thus statistical approach.  We will operationalize measurement of distributional overlap by producing samples from each theoretical model, calculating or other producing the observable variables or summary statistics, applying any simulated data collection treatments (such as specific sampling regimes), and then attempting to ``predict'' which data generating model generated each data point.  The error rate in predicting the correct model is a quantitative measure of \emph{how much equifinality} there is between models, given a set of predictor variables and data collection treatments.  
 
-We can formalize the analysis of overlap between models as a problem of
-``classification'' or ``pattern recognition'' in the sense of
-statistical or machine learning \cite{hastie2009elements}. Given a set
+In more formal terms, we define measurement of equifinality as the error in performing a classification task, in the machine learning sense \citep{murphy2012machine}.  Given a set
 of models \(\mathcal{M}_1 \ldots \mathcal{M}_n\), we can measure
 equifinality as the minimum possible error achievable in correctly
-assigning simulated data points to the models which generated them,
-given measurement of a set of predictor variables. In general, the
-classification problem asks which model has the highest probability for
+assigning simulated data points to the data generating model which produced them,
+given measurement of a set of predictor variables or ``summary statistics.'' In the classification task, we ask which model has the highest probability for
 a given data point, given the conditional density of the data and
 models. This sounds exactly like Bayes' theorem, and in fact we can
 write the classification problem as follows, where
@@ -143,13 +93,9 @@ write the classification problem as follows, where
 \label{eq:bayes-rule-classification}
 \end{equation}
 
-\(\mathbb{P}(Y)\) plays the role of the prior distribution, and is the
-prevalence of each model in the population. This is a constant in
-situations where we are simulating values from each model to test for
-equifinality. The data points in a classification problem are given, and
-thus the denominator is a constant. The most probable class for a given
-data point is just the mode of the likelihood function, which is given
-by:
+\(\mathbb{P}(Y)\) plays the role of the prior distribution, and reflects how prevalent we expect each label or model to be in the population.  In a true empirical study this might be uniform---if we had no reason to suspect that a model may be more likely than another \emph{a priori}, or we may have substantive reasons for weighting models.  For example, models may capture the prevalence of a genetic factor, and we may have quantitative evidence for that prevalence.  In a theoretical study such as this one, we are simulating equal numbers of samples from each theoretical model, and thus the term will be constant and cancel out.  The data points in a classification problem are given, and
+thus the denominator is also a constant. The most probable class for a given
+data point reduces, therefore, to the mode of the likelihood function:
 
 \begin{equation}
 Y_{pred} = \argmax_y \mathbb{P}(X_1, \ldots, X_p | Y)
@@ -160,12 +106,12 @@ This is the \emph{Bayes classifier} for a controlled simulation
 experiment, and its error rate in separating data points by model is
 called the \emph{Bayes error}. This is the lowest possible error in
 separating the models given the data
-\cite{devijver1982pattern, fukunaga1990introduction, hastie2009elements}.
+\citep{devijver1982pattern, fukunaga1990introduction, hastie2009elements}.
 The Bayes error is zero when we can correctly identify each data point
-as to its model of origin (as in the left panel of Fig. \ref{fig2}, and rises as two models overlap in the
+as to its model of origin (as in the left panel of Fig. \ref{ctmixtures:fig:distributional-scenarios}, and rises as two models overlap in the
 measurement space. With sufficient overlap, the Bayes error could
 approach 0.5, which represents a prediction rule which is no better than
-chance.\footnote{Predictors can achieve even worse error levels, performing more poorly than coin-flipping, but in the current study we will not encounter such rates.}
+chance, or conceivably rise even further, indicating that our classifier performs even worse than coin-flipping.\footnote{Error rates can obviously be higher than 50\% in an empirical study, but in a controlled simulation study like the present paper, error higher than a coin-flip is indicative of a problem with the experimental setup.}
 
 Unfortunately, we can almost never directly calculate the Bayes error
 rate for a prediction or classification rule, because we rarely have an
@@ -173,60 +119,23 @@ expression for the likelihood function of our transmission models in the
 spaced formed by the predictor variables. Bayes error can be directly calculated, in fact, only for
 a small number of cases, such as Gaussian distributions with a shared
 covariance
-matrix.\footnote{There is a large literature, especially in pattern recognition and language classification, on approximating upper bounds for the Bayes error of a classifier, because it is highly useful to know when you cannot improve a recognition system or classifier any further \cite{Antos:1999dn, Dobbin:2009du, McLachlan:1975eo}.  Most such upper bounds are based upon parametric models, and use estimates of a distance metric between the classes being distinguished (typically, the Mahalanobis or Bhattacharyya distance) \cite{devijver1982pattern}.  Such bounds are difficult to justify in situations where we have complex social learning models, whose probability density functions in the space of measured variables are typically unknown and are unlikely to be Gaussian.  Non parametric bounds are possible, using nearest-neighbor methods \cite{Loizou:1987bi}, but in most cases the values obtained are not very tight and the performance of boosting and bagged classifiers easily surpasses such methods.}
+matrix.  There is a large literature, especially in pattern recognition and language classification, on approximating upper bounds for the Bayes error of a classifier, because it is highly useful to know when you cannot improve a recognition system or classifier any further \citep{Antos:1999dn, Dobbin:2009du, McLachlan:1975eo}.  Most such upper bounds are based upon parametric models, and use estimates of a distance metric between the classes being distinguished (typically, the Mahalanobis or Bhattacharyya distance) \citep{devijver1982pattern}.  Such bounds are difficult to apply in situations where we have complex social learning models, whose probability density functions in the space of measured variables are typically unknown.  
+
 Despite the fact that we can rarely calculate the Bayes error rate, it
 is useful as an operational definition for equifinality, since it
 measures our uncertainty about model choice given a set of measurable
-variables. In practice, we approximate the Bayes error by employing
-algorithms which are known to have near-optimal performance in
-classification problems. In particular, boosting, bagging, and ensemble
-approaches that combine many classifier rules are attractive since each
-achieves some of the best generalization error in prediction tests
-\cite{hastie2009elements}, and thus come closest to estimating the
-Bayes rate \cite{tumer2003bayes}.  
+variables. In practice, we approximate the Bayes error by employing classifier algorithms which are able represent complex relationships between all of the predictor variables in order to get as close to the Bayes error rate as possible.  This generally means using methods with higher model ``capacity'' than the linear models familiar to most archaeologists (such as logistic regression or linear discriminant analysis).  Formally we seek methods with high Vapnik-Chervonenkis (or VC) dimension, which measures the ability to represent complex decision boundaries between classes \citep{vapnik2013nature}.  At present, methods such as boosting, bagging, and ensemble approaches that combine weaker methods such as decision trees with boosting combine high capacity with very low error across many benchmark cases \citep{hastie2009elements}, and thus come closest to estimating the
+Bayes rate \citep{tumer2003bayes}.  
 
+\subsection{Simulation Modeling of Cultural Transmission Mixtures}\label{ctmixtures:sec:ct-mixture-modeling}
 
-\subsection{Study Design}\label{model-comparisons}
-
-In order to assess whether transmission bias is identifiable from archaeological samples, this study simulates conformist, anticonformist, and unbiased cultural transmission over a range of innovation rates, recording the outcome of transmission events in the form of counts for individual traits, and for cross-tabulated ``classes'' of traits which simulate multi-dimensional archaeological types of the kind typically used by archaeologists.  These samples of trait and class counts are then subjected to sampling and temporal aggregation, to simulate the kind of assemblage-level often confronted in archaeological samples.  For both the raw trait/class counts, and the sampled and time averaged counts, I use a classifier approach with multiple predictor variables to assess the identifiability of transmission bias.    
-
-The general process followed throughout the study is:
-
-\begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  Simulate a large number of samples from each cultural transmission
-  model, at a fixed population size, but with an innovation rate drawn from a uniform distribution of possible values.  Record trait and class counts during sampling intervals and at the end of each simulation run.
-\item
-  Measure a set of archaeologically relevant variables (e.g., richness,
-  diversity) on each stored sample.
-\item
-  Perform each variable measurement across different data collection
-  regimes (e.g., duration of accumulation, sample size).
-\item
-  Train a predictive classifier model for each data collection regime,
-  to predict the model of origin given the measured variables.
-\item
-  Assess the classifier error rate using additional samples simulated
-  from each transmission model.
-\end{itemize}
-
-
-
-
-
-\subsection{Methods}\label{methods}
-
-\subsubsection{Simulated Samples of Cultural Transmission
-Models}\label{simulated-samples-of-cultural-transmission-models}
-
-The outcomes of all four transmission models are derived by simulating the
+In order to measure the overlap between various theoretical mixtures of social learning strategies, I built simulation models for the scenarios given in Table \ref{ctmixtures:tab:models}.  The outcomes of all four transmission models are derived by simulating the
 dynamics of the model in an agent-based framework that allows each agent to be assigned a different transmission rule.  All simulations employ
 the Moran dynamics, where one individual engages in a copying event at
 each elemental step
-\cite{moran1962statistical, moran1958random, aoki2011rates}.
+\citep{moran1962statistical, moran1958random, aoki2011rates}.
 Innovations are modeled using the ``infinite alleles'' approximation,
-where every innovation is new to the population \cite{Ewens2004}.
+where every innovation is new to the population \citep{Ewens2004}.
 Simulations were performed using the CTMixtures software package,
 available as open source
 software.\footnote{\url{https://github.com/mmadsen/ctmixtures}} The
@@ -236,9 +145,26 @@ rate), the parameter is treated as a prior distribution and each
 simulation run is assigned a uniform random value from the range. This
 ensures good coverage of the parameter space given 25,000 replicates for
 each of the 4
-models.\footnote{The use of a good prior distribution for parameter ranges also results in simulation data that are usable for later data fitting by approximate Bayesian inference \cite{Beaumont:2010ur, Crema:2014ef, Csillery:2010jd, Marin2012}.}
+models.\footnote{The use of a good prior distribution for parameter ranges also results in simulation data that are usable for later data fitting by approximate Bayesian inference \citep{Beaumont:2010ur, Crema:2014ef, Csillery:2010jd, marin2012}.}
 
-\begin{table}[h]
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        \hline
+        Model Code & Model Description \\ 
+        \hline
+        Unbiased & Population with only unbiased copiers \\
+        Equal Mixture & Equal numbers of conformists and anti-conformists \\
+        Conformist Dom & 70\% conformists with 30\% anti-conformists  \\
+        AntiConf Dom & 70\% anti-conformists with 30\% conformists \\
+        \hline
+    \end{tabular}
+    \caption{Theoretical models that were simulated as part of this study.}
+    \label{ctmixtures:tab:models}
+\end{table}
+
+
+
+\begin{table}[htb]
 \begin{tabular}{lc}
 \hline
 Parameter & Value or Interval \\ 
@@ -277,12 +203,13 @@ was chosen.\footnote{The analysis underpinning this decision is available in the
 At the end of 4 million simulation steps, a suite of variables are
 measured from each of the 25,000 replicates and stored for analysis.
 
-\subsubsection{Variable Selection}\label{variable-selection}
+
+\subsection{Summary Statistic Selection}\label{ctmixtures:sec:variable-selection}
 
 Since most previous work on identifying transmission mode from archaeological data employ single diagnostic variables, and begin to display equifinality under realistic data collection conditions, it is reasonable to examine whether using multiple variables will yield more discriminatory power in the same contexts.  By representing the outcomes of transmission models in a higher dimensional space, it should be easier to find a decision boundary (``separating hyperplane'') that correctly predicts the model which generated each data point, if such a boundary exists.  
 
 \begin{table}[ht]
-\begin{tabular}{lll}
+\begin{tabular}{ll}
 \hline
 Variable                                    & Model Variable \\ 
 \hline
@@ -318,11 +245,11 @@ Neiman $T_f$ (Mean)   & neiman\_tf\_locus\_mean \\
 \end{table}
 
 The predictor variables chosen in this study focus upon measures of richness and
-diversity, trait survival over time \cite{kandler2013non}, and the
-Slatkin neutrality test \cite{slatkin1996correction, slatkin1994exact}.
+diversity, trait survival over time \citep{kandler2013non}, and the
+Slatkin neutrality test \citep{slatkin1996correction, slatkin1994exact}.
 Each has been employed in the archaeological literature on identifying
 cultural transmission modes, or is a variant on such measures (e.g., IQV
-is a normalized version of Shannon entropy), and crucially, all are measurable in standard archaeological contexts using type frequency data.  This additionally makes most of the variables applicable to the re-analysis of already published data, which is an important usage scenario in archaeological research.   
+is a normalized version of Shannon entropy), and crucially, all are measurable in standard archaeological contexts using attribute or class frequency data.  This additionally makes most of the variables applicable to the re-analysis of already published data, which is an important usage scenario in archaeological research.   
 
 For the locus-centric variables, each statistic was applied to each
 locus separately, and the mean, minimum, and maximum of the values
@@ -334,7 +261,7 @@ at each locus were combined into a cross-tabulation of "classes" which simulates
 process of archaeological classification. Each class represents a
 different combination of traits from the 4 loci, and very roughly
 simulates observing cultural variation through the lens of a standard
-paradigmatic classification \cite{Dunnell1971}. The same variables are
+paradigmatic classification \citep{Dunnell1971}. The same variables are
 then measured as a function of the class counts.\footnote{The sole exception is the Kandler-Shennan survival time, which is not measured here for the cross-tabulated classes.  Understanding the quantitative behavior of this measure for multidimensional classes of traits is an important open research question, however.} This allows us to
 understand whether transmission models are better distinguished on a
 per-locus (dimension) basis or by operating on more complex classes that
@@ -342,42 +269,31 @@ combine several traits together. The full list of measured variables is
 given in Table \ref{tab:variables}.
 
 As a final note on variable selection, in an exploratory analysis for this
-project, I tried to include the power law exponent from a log-log
-transformation of trait frequency, given the important work by Bentley
-\cite{bentley2004random} and Mesoudi and Lycett
-\cite{Mesoudi2009}. It is not clear, however, that previous uses
-of this variable have been comparable to measurements we can make on
-archaeological assemblages. As an example, Mesoudi and Lycett
-\cite{Mesoudi2009} use the cumulative number of adoptions of each
-trait over the entire time span of the simulation as the ``frequency''
+project, I tried to include the power law exponent as a summary statistic, given the important work by Bentley and colleagues
+\citeyearpar{bentley2004random} and Mesoudi and Lycett
+\citeyearpar{Mesoudi2009}.  Proper fitting of power law distributions to empirical data is more difficult than simply determining if a straight line describes the data after double logarithmic transformation; in particular testing if a data set displays a power law is difficult if there are a small number of counts and small sample size \citep{clauset2007power}.  This may be difficult in many archaeological cases where the number of classes may be relatively small (on the order of ten rather than hundreds), and the total sample sizes can be relatively small.  In their study, Mesoudi and Lycett
+\citeyearpar{Mesoudi2009} use the cumulative number of adoptions of each
+trait over the entire time span of their simulations as the ``frequency''
 used to calculate power law
-exponents.\footnote{I confirmed this by inspection of the source code for their simulation model, which was provided by Alex Mesoudi.}
-Given the measurement strategies described in Table
-\ref{tab:measurement-strategies}, the number of traits present at any
-given time is often small, and their prevalence in a small population
-makes it difficult to fit a power law to the data. Despite its
-importance in archaeological discussions of neutral versus biased
-transmission, I have omitted power law exponents from the published
-analysis, pending investigation of the proper method for calculating
-them in situations with small \(N\) and small numbers of trait
-categories.
+exponents.\footnote{I confirmed this by inspection of the source code for their simulation model, which was provided by Alex Mesoudi.}  This quantity is available in simulation but would unobservable in empirical data.  Whether or not to include power law exponents as predictor variables will depend strongly on the data set in question.  Given the experimental setup used in this study, power law exponents were difficult to calculate in a stable way.  Thus, I did not include them in the remainder of this study, and their discriminatory power in combination with other variables thus remains an open question.
 
-\subsubsection{Data Collection Treatments}\label{data-collection-treatments}
+\subsection{Data Collection Treatments}\label{data-collection-treatments}
 
-At the end of each simulation run, after the model has reached a quasi-stable equilibrium (measured as stability in per-locus trait richness), a series of samples are taken from the evolving population.  These samples are taken in ways that correspond to various real-world data collection strategies.  First, a census of the entire population is taken.  This functions as a baseline for the ``most complete'' information we can use to identify transmission modes, and there are also conditions during observational studies or in laboratory experiments where census is possible.  In archaeological studies, anything approximating a census is usually impossible, although Jonathan Scholnick's study of New England gravestones and their makers may approximate this quality of data collection \cite{scholnick2012spatial}.  Second, the simulated population is sampled, at the 10\% and 20\% levels.  Sampled data is ubiquitous in archaeological research, and although the issues involved in mapping artifact samples to their meaning for the underlying population of social learners is complex and unresolved, it is useful to determine whether the overall sample fraction has a measurable effect upon model equifinality.  
+At the end of each simulation run, after the model has reached a quasi-stable equilibrium (measured as stability in per-locus trait richness), a series of samples are taken from the evolving population.  These samples are taken in ways that correspond to various real-world data collection strategies.  First, a census of the entire population is taken.  This functions as a baseline for the ``most complete'' information we can use to identify transmission modes, and there are also conditions during observational studies or in laboratory experiments where census is possible.  In archaeological studies, anything approximating a census is usually impossible, although Jonathan Scholnick's study of New England gravestones and their makers may approximate this quality of data collection \citep{scholnick2012spatial}.  Second, the simulated population is sampled, at the 10\% and 20\% levels.  Sampled data is ubiquitous in archaeological research, and although the issues involved in mapping artifact samples to their meaning for the underlying population of social learners is complex and unresolved, it is useful to determine whether the overall sample fraction has a measurable effect upon model equifinality.  
 
-Archaeological data are rarely synchronic or ``point in time'' samples of the results of human activity, and are typically aggregated over an appreciable duration of time through both data recovery conventions and formation processes \cite{Grayson1998,lyman2003influence,Madsen2012TA,Porcic2014Exploring-the-E,Premo:2014jv}.  Thus, the sampled data employed in this study is also temporally aggregated over a number of time steps, and the aggregate trait counts and then used to determine the frequencies of cultural traits over the entire interval.  The population census has no temporal aggregation, and thus does represent a synchronic census.  
+Archaeology derives its empirical data by sampling a sedimentary record of artifact discard and trace fossil creation by many individuals, often over large spans of time \citep{schiffer1983toward,Schiffer1987,stein2001review,Stein1987,Stein1993,stein2001review,stein2003big}.  Thus, our data almost never represent synchronic or ``point in time'' samples of the results of human activity \citep{grayson1998,lyman2003influence,Madsen2012TA,Porcic2014Exploring-the-E,Premo:2014jv}.  Therefore, the simulated samples of cultural transmission in this study are also temporally aggregated over a number of time steps, and the aggregate trait counts used to determine the frequencies of cultural traits over the entire interval.  The population census has no temporal aggregation, and thus does represent a synchronic census.  
 
-Time averaging is implemented according to the schematic in Fig. \ref{fig3}.  At the end of the simulation run, sampling begins at a time index calculated to allow time averaged samples to be taken twice, with a gap of 50 ``generations'' to allow the calculation of the Kandler-Shennan trait survival statistic (although unlike their original study, the values at the start and end times are inherently time averaged in this study, which would be the base in any real archaeological context) \cite{kandler2013non}.\footnote{The effect of time averaging on the start and end values used to calculate the Kandler-Shennan trait survival is not directly studied in this paper, but is a necessary component of using their method to study archaeological assemblages, I believe.}  
+Time averaging is implemented according to the schematic in Fig. \ref{ctmixtures:fig:kandler-sampling}.  At the end of the simulation run, sampling begins at a time index calculated to allow time averaged samples to be taken twice, with a gap of 50 ``generations'' to also allow the calculation of the Kandler-Shennan trait survival statistic (although unlike their original study, the values at the start and end times are inherently time averaged in this study, which would be the case in any real archaeological context) \citep{Kandler2013}.
 
-\begin{figure}[h]
-	\caption{Schematic of how sampling is implemented in this study.  Time runs from the start of the simulation run at the top, to the end at the bottom.  The interval of time over which we calculate the Kandler-Shennan trait survival is given as a simulation parameter, and represents the gap in the middle of the diagram.  Before and after that gap are windows of successive duration, representing aggregation over 10, 25, 50, and 100 ``generations'' of the simulation.}
-	\label{fig3}
+\begin{figure}[p!]
+\centering\includegraphics[scale=0.4]{graphics/ctmixtures/time-averaging-with-kandler-sampling.pdf}
+\caption{Schematic of how trait survival as described by Kandler and Shennan \citep{Kandler2013} is extended to time averaged samples of transmission events.  Time runs from the start of the simulation run at the top, to the end at the bottom.  The interval of time over which we calculate the Kandler-Shennan trait survival is given as a simulation parameter, and represents the gap in the middle of the diagram.  Before and after that gap are sampling windows during which transmission events are accumulated over some number of simulated ``generations'' (values of 10, 25, 50, and 100 are used in this paper).  Trait survival is then calculated as the number of traits present in the starting time averaged sample of transmission events, which are still present in the ending time averaged sample of events.}
+\label{ctmixtures:fig:kandler-sampling}
 \end{figure}
 
 
 \begin{table}[ht]
-    \begin{tabular}{lll}
+    \begin{tabular}{ll}
         \hline
         Sampling Strategy & Time Averaging Duration \\ 
         \hline
@@ -393,17 +309,17 @@ Time averaging is implemented according to the schematic in Fig. \ref{fig3}.  At
         \hline
     \end{tabular}
     \caption{Data collection strategies, applied to every simulation run.  Time averaging duration is given in units of "generations," which are units of 100 time steps (given the population size).  100 generations thus represents 10,000 elemental time steps in the Moran simulation dynamics.}
-    \label{tab:measurement-strategies}
+    \label{ctmixtures:tab:measurement-strategies}
 \end{table}
 
-The data collection strategies employed in this study are given in Table \ref{tab:measurement-strategies}.  Applied to all 23 variables, the study yielded approximately 900,000 samples from the four transmission models.\footnote{All data and analyses for this study are available as part of a Github repository, although large data files are kept on Amazon S3 for long-term storage.  See \url{https://github.com/mmadsen/experiment-ctmixtures} for details.  The published analysis described here is the ``equifinality-4'' data set.}  This raw data was then formed into the three pairwise comparisons shown in Table \ref{tab:comparisons} for equifinality analysis with a classifier model.
+The data collection strategies employed in this study are given in Table \ref{ctmixtures:tab:measurement-strategies}.  Applied to all 23 variables, the study yielded approximately 900,000 samples from the four transmission models listed in Table \ref{ctmixtures:tab:models}.\footnote{All data and analyses for this study are available as part of a Github repository, although large data files are kept on Amazon S3 for long-term storage.  See \url{https://github.com/mmadsen/experiment-ctmixtures} for details.  The published analysis described here is the ``equifinality-4'' data set.}  
 
-\subsubsection{Classifier Selection and
+\subsection{Classifier Selection and
 Training}\label{classifier-selection-and-training}
 
 Classifier algorithms are supervising learning models from statistics
 and machine learning that predict a categorical response from a mixture
-of discrete or continuous variables \cite{hastie2009elements}. The most
+of discrete or continuous variables \citep{hastie2009elements}. The most
 familiar classifiers in archaeological practice are logistic regression
 and discriminant function analysis, but neither is competitive with
 contemporary ``ensemble'' methods which combine many classifier rules
@@ -416,12 +332,12 @@ Since the Bayes error rate of comparing two complex transmission models is not s
 decision theory (called, appropriately, the ``No Free Lunch'' theorems)
 guarantee that there is no single prediction model that can achieve the
 best result with every data set and problem
-\cite{wolpert2002supervised, wolpert1997no}. Thus, I took a compromise approach, selecting several algorithms that are known to have excellent performance across a range of data sets, and then performing a pilot study using the four transmission models previously described.  A recent study
+\citep{wolpert2002supervised, wolpert1997no}. Thus, I took a compromise approach, selecting several algorithms that are known to have excellent performance across a range of data sets, and then performing a pilot study using the four transmission models previously described.  A recent study
 compared 179 classifier algorithms on 121 different data sets
 (representing the entire UC Irvine Machine Learning Database), and found
-that random forests \cite{breiman2001random}, support vector machines,
+that random forests \citep{breiman2001random}, support vector machines,
 and gradient boosted classifiers performed the best
-\cite{hastie2009elements}. Additionally, some ensemble methods (random
+\citep{hastie2009elements}. Additionally, some ensemble methods (random
 forests and gradient boosted classifiers) provide information on
 variable importance as an integral part of the algorithm.  Since understanding which of our 23 variables are useful for separating transmission models is an important aspect of this study, I evaluated random forests against gradient boosted classification trees using small simulated samples from each transmission model.\footnote{The data for this initial comparison are available in the \url{https://github.com/mmadsen/experiment-ctmixtures} repository under the experiment name ``equifinality-2''.}
 Gradient boosted models outperformed random forests on these simulated
@@ -429,24 +345,35 @@ data, are comparable in computational costs, and are used for all
 further results in this paper.
 
 Gradient boosted classification operates by repeatedly fitting a set of
-decision trees to the data \cite{AlexeyNatekin:2013ew,hastie2009elements}. In each round, decision trees are fit to the training data, and individual data points scored as errors or successful predictions.  Subsequent trees are fitted by modifying the trees in the direction that minimizes the residual error.  This is equivalent to finding the gradient of the loss function in the space of possible classifier functions, hence the name of the method.  The impact of each gradient step is smoothed by including a ``shrinkage'' factor.  Finally, the gradient steps are ``boosted'' to weight data points by the success in prediction, such that data points that are frequently misclassified become targeted by the algorithm until they can be correctly predicted \cite{freund1995boosting, freund1999short, schapire2012boosting}.  After a specified number of iterations, the class or label membership of each data point is obtained by having each gradient step classifier tree ``vote'' for class membership, and the final answer is the majority vote.  This class of models can also be visualized as repeated refitting of residuals until error is minimized \cite{friedman2001greedy}.  This combination of boosting and iterative function search is very powerful, and gradient boosted models regularly achieve top accuracy in benchmark studies.
+decision trees to the data \citep{AlexeyNatekin2013,hastie2009elements}. In each round, decision trees are fit to the training data, and individual data points scored as errors or successful predictions.  Subsequent trees are fitted by modifying the trees in the direction that minimizes the residual error.  This is equivalent to finding the gradient of the loss function in the space of possible classifier functions, hence the name of the method.  The impact of each gradient step is smoothed by including a ``shrinkage'' factor.  Finally, the gradient steps are ``boosted'' to weight data points by the success in prediction, such that data points that are frequently misclassified become targeted by the algorithm until they can be correctly predicted \citep{freund1995boosting, freund1999short, schapire2012boosting}.  After a specified number of iterations, the class or label membership of each data point is obtained by having each gradient step classifier tree ``vote'' for class membership, and the final answer is the majority vote.  This class of models can also be visualized as repeated refitting of residuals until error is minimized \citep{friedman2001greedy}.  This combination of boosting and iterative function search is very powerful, and gradient boosted models regularly achieve top accuracy in benchmark studies.
 
 In this study, I employ the R package (\textbf{gbm}) for gradient
-boosted classification \cite{ridgeway1999state}, with the binomial deviance \(\textrm{log}(1 + \textrm{exp}(-2y\hat{y}))\) as our loss function, where \(y\) is the true
+boosted classification \citep{ridgeway1999state}, with the binomial deviance \(\textrm{log}(1 + \textrm{exp}(-2y\hat{y}))\) as our loss function, where \(y\) is the true
 model for a data point, and \(\hat{y}\) is the classifier model's
-prediction.  Binomial deviance approximates the ``zero-one'' loss function with one which is differentiable, which is needed for a gradient descent method.  The tuning parameters for this study (number of boosting iterations, depth of classification trees) were selected using 5 rounds of repeated 10-fold cross-validation on the training data \cite{Kim:2009im, kuhn2013applied}.
+prediction.  Binomial deviance approximates the ``zero-one'' loss function with one which is differentiable, which is needed for a gradient descent method.  The tuning parameters for this study (number of boosting iterations, depth of classification trees) were selected using 5 rounds of repeated 10-fold cross-validation on the training data \citep{Kim:2009im, kuhn2013applied}.
 
-The full data set is  split into two chunks. 80\% of the data are
-used to train the classifier model, and 20\% are held back to provide an
+The full data set of simulation samples, after data collection treatments, was split into two chunks. 80\% of the data were
+used to train the classifier model, and 20\% were held back to provide an
 unbiased evaluation of classifier performance.  For each comparison of models
-reported here, the training data are thus fitted 50 times across
+reported, the training data were thus fitted 50 times across
 different values of the tuning parameters (number of boosting
 iterations, and depth of decision trees), and the best performing
 parameters chosen from the repeated cross-validation sets. The final model is then constructed using the entire
 training set and the optimal parameter values. All classifier tuning,
 final model fitting, and test error evaluation was performed using Max
 Kuhn's superb \textbf{caret} package for R
-\cite{kuhn2008building, kuhn2013applied}.
+\citep{kuhn2008building, kuhn2013applied}.  The final results reported are those achieved on the 20\% of data points held out for evaluation.
+
+
+\subsection{Classification Error and Equifinality
+Assessment}\label{classification-error-and-equifinality-assessment}
+
+
+The basic data for assessing the quality of a classifier model is the
+\emph{confusion matrix}, which compares classification successes and
+errors for a data set.  A hypothetical example is given in Table
+\ref{tab:confusion-matrix}.  The most basic measure of classification quality is the \emph{accuracy}, or the ratio
+of correct predictions to the total number of data points.  In the confusion matrix, this is the ratio of the sum of diagonal elements to the sum of off-diagonal elements.  In the example given in Table \ref{tab:confusion-matrix}, the classifier is 82.5\% accurate. We often also use the misclassification rate, which is simply $1 - \emph{accuracy}$.  
 
 \begin{table}[ht]
 \begin{tabular}{c|cc}
@@ -461,23 +388,10 @@ Kuhn's superb \textbf{caret} package for R
 \end{table}
 
 
-\subsubsection{Classification Error and Equifinality
-Assessment}\label{classification-error-and-equifinality-assessment}
-
-
-
-
-The basic data for assessing the quality of a classifier model is the
-\emph{confusion matrix}, which compares classification successes and
-errors for a data set.  A hypothetical example is given in Table
-\ref{tab:confusion-matrix}.  The most basic measure of classification quality is the \emph{accuracy}, or the ratio
-of correct predictions to the total number of data points.  In the confusion matrix, this is the ratio of the sum of diagonal elements to the sum of off-diagonal elements.  In the example given in Table \ref{tab:confusion-matrix}, the classifier is 82.5\% accurate. We often also use the misclassification rate, which is simply $1 - \textrm{accuracy}$.  
-
-
 When the classes
 being predicted are not balanced, and especially if there are a small
 number of one class compared to another, a better statistic is Cohen's
-``kappa'' \cite{kuhn2013applied}, which compares observed accuracy to
+``kappa'' \citep{kuhn2013applied}, which compares observed accuracy to
 what one would expect purely from chance, given the marginal totals:
 
 \begin{equation}
@@ -491,7 +405,7 @@ confusion matrix. Kappa ranges from \(-1\) to \(+1\), with \(0\)
 indicating no agreement between predictions and the real class
 memberships. High values indicate good agreement, while values below
 \(0.5\) and especially less than \(0.2\) indicate very poor predictive
-ability \cite{altman1991practical}. In the present context, a
+ability \citep{altman1991practical}. In the present context, a
 classifier comparison (for example, biased versus neutral models with no
 sampling or time averaging) that yield a high kappa value are strong
 evidence that no equifinality exists between the two situations, since
@@ -499,75 +413,66 @@ the classifier is highly accurate. Low kappa values are evidence that
 despite strong statistical methods and many variables to choose from, we
 cannot distinguish between models, and thus the models may be equifinal.  
 
-In studies where one outcome or class represents the presence of something (e.g., a positive test for a disease marker) and the other the absence, we may look at the individual cells of the confusion matrix rather than the bulk accuracy.  The ``false positive rate'' (FPR), for example, is the number of cases which are not members of the ``positive'' class, but which the classifier falsely identifies as such (in the example shown here, if Model 1 is the positive class, the cell in the upper right corner of the matrix is the FPR.  A number of other statistics build from FPR and the false negative rate to handle asymmetric experiments.  In the present study, we are interested simply in the misclassification rate, or bulk accuracy, of predicting the correct model.  Throughout these results, I use the misclassification rate and Cohen's kappa values exclusively.  
-
 \section{Results}\label{results}
 
-In the next three sections, I review the results of applying the gradient boosted classifier to the three pairwise comparisons described in Table \ref{tab:comparisons}.  
+From the four models listed in Table \ref{ctmixtures:tab:models}, I examine three comparisons.  The first comparison addresses our general capability to distinguished unbiased (or neutral) cultural transmission from samples drawn from populations with mixtures of both conformist and anti-conformist propensities.  The second examines our ability to distinguish between an unbiased population, and a population comprised of a majority of conformists, with 30\% anti-conformists, to create a mixture of social learning modes.  The third compares an unbiased population with a majority of anti-conformists, with 30\% conformists, to produce the opposite configuration.
 
-\subsection{Unbiased Versus Biased Cultural
-Transmission}\label{unbiased-versus-biased-cultural-transmission}
-
-In the first comparison, all data points generated by unbiased (neutral) cultural transmission form one class, and the data points generated by each of the 3 biased models.  As a reminder, the latter are:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
-\item
-  Mixture of equal numbers of conformists and anti-conformists.
-\item
-  A mixture dominated by conformists, but with 30\% anti-conformists.
-\item
-  A mixture dominated by anti-conformists, but with 30\%
-  anti-conformists.
-\end{enumerate}
-
-This comparison examines the question of whether multiple predictor variables give us the power to discriminate between unbiased and any mixture of biased transmission, across different data collection regimes.  For this comparison, classifier models were also developed for all of the predictor variables, and just for the per-locus variables, to determine the effect of using multidimensional classes that mimic archaeological classification, as opposed to simply examining single dimensions of variation (which has been the most common practice in archaeological studies to date).  
-
-The results are summarized in Fig. \ref{fig4} as Cohen's kappa values across the different predictor variable sets and data collection regimes.  It is immediately apparent that multiple variables in our classifier model gives us great power in distinguishing biased from unbiased transmission, in the case where we have population census data which is not subject to temporal aggregation.  The use of multidimensional classes \emph{in addition} to per-locus variables offers a tiny increase in accuracy, but these two comparisons are otherwise equivalent and display no equifinality given 97\% accuracy in predicting biased versus unbiased transmission in the hold-out test set.  
-
-\begin{figure}[h]
-\caption{Cohen's kappa for correctly predicting whether simulated data points originate from unbiased copying or any of 3 other biased transmission models.  High values of kappa correspond to high accuracy in correctly distinguishing between transmission models, while values well below 0.5 indicate great difficult and low classifier accuracy.  Each line in the dotchart represents a different data collection treatment, and overall the results indicate that significant equifinality exists except when time averaging is absent and a population census (or near equivalent) is available.}
-\label{fig4}
+\begin{figure}[p!]
+\centering\includegraphics[scale=0.65]{graphics/ctmixtures/eq5-kappa-dotchart-full-predictors.pdf}
+\caption{Cohen's kappa values for model comparisons, using a classifier trained on all predictors including per-locus and ``classes'' built from intersecting loci and then counting frequencies.  Top panel provides results for comparing a neutral, unbiased population and a balanced mixture of conformist and anti-conformists.  The middle panel provides results for unbiased compared to a population dominated by anti-conformists.  The bottom panel depicts results for unbiased compared toa population dominated by conformists.  Each panel presents results for the 9 data collection treatments analyzed.}
+\label{ctmixtures:fig:kappa-full-predictors}
 \end{figure}
 
-Accuracy rapidly declines, however, when data points are derived from samples of the evolving population and where time averaging is present.  As one might expect, larger samples offer more accurate predictions than smaller samples.  Within the larger, 20\% sample, when cross-tabulated class and per-locus predictors are included, accuracy is highest with the smallest amount of time averaging (10 generations), and decreases as time averaging increases.  When we remove cross-tabulated class predictors, and simply look at per-locus variables, this clean pattern is not apparent, and accuracy is not a function of time averaging duration.  Furthermore, for the smaller 10\% sample with all variables included, accuracy is not a function of time averaging duration.  In these cases, Cohen's kappa values are close to 0.25, indicative of a very poor classification model whose output bears little relation to the underlying transmission models.  Finally, pooling all sample sizes and time averaging durations simply yields the average performance of the sampled and aggregated models, as one might expect.  
+\begin{figure}[p!]
+\centering\includegraphics[scale=0.65]{graphics/ctmixtures/eq5-kappa-dotchart-perlocus-predictors.pdf}
+\caption{Cohen's kappa values for model comparisons, using a classifier trained only on predictor variables derived from per-locus trait counts.  Top panel provides results for comparing a neutral, unbiased population and a balanced mixture of conformist and anti-conformists.  The middle panel provides results for unbiased compared to a population dominated by anti-conformists.  The bottom panel depicts results for unbiased compared toa population dominated by conformists.  Each panel presents results for the 9 data collection treatments analyzed.}
+\label{ctmixtures:fig:kappa-perlocus-predictors}
+\end{figure}
+
+For each of the three comparisons, the Cohen's kappa scores were calculated two ways:  with all predictive variables (including the class variables measured on intersections of attributes from the 4 different loci), and for classifiers built only with per-locus variables (i.e., where we look only at what would be single attributes rather than more complex archaeological classes or culture-historical types.  
+
+\subsection{Classification Error and Equifinality Results}
+
+In this section I outline the results from the three model comparisons described above, across all 9 data collection treatments.  Figure \ref{ctmixtures:fig:kappa-full-predictors} depicts Cohen's kappa results for the classifier trained with all predictor variables, including those from per-locus trait counts, and those from intersecting all four loci into ``classes'' that mimic the way paradigmatic classifications are constructed to build archaeological types \citep{Dunnell1971}.  Figure \ref{ctmixtures:fig:kappa-perlocus-predictors} provides the Cohen's kappa results for the classifier trained only on predictor values derived from per-locus trait counts.  
+
+What is strongly apparent, however, is population-level, coarse grained data \emph{can} reliably distinguish between a population of unbiased copiers and various mixtures of individuals with differing propensities for conformism and anti-conformism.  Using multiple variables in a classifier model creates sufficient discriminatory power that we can distinguish these models reliably, even in a balanced mixture with equal numbers of conformists and anti-conformists.  The effects do not, apparently, ``cancel out.''  
+
+This ability to distinguish models, however, is only apparent where we can census the entire population (or, presumably take very large samples), and where there is no time averaging.  We should, in other words, expect to be able to identify pure and mixed models of social learning modes in situations where we can obtain synchronic samples, and capture enough of the population that we can accurately capture all of the variation present.  This is possible in experimental contexts, and in many contemporary data sets that represent data on whole populations.  That's good news for researchers seeking to use microevolutionary models to study social psychological phenomena related to social learning in contemporary contexts.
+
+Even more strongly apparent, however, is that accuracy rapidly declines as sample fraction decreases and as time averaging increases.   As one might expect, larger samples offer more accurate predictions than smaller samples.  Within the larger, 20\% sample, when cross-tabulated class and per-locus predictors are included, accuracy is highest with the smallest amount of time averaging (10 generations), and decreases as time averaging increases.  When we remove cross-tabulated class predictors, and simply look at per-locus variables, this clean pattern is not apparent, and accuracy is not a function of time averaging duration.  Furthermore, for the smaller 10\% sample with all variables included, accuracy is not a function of time averaging duration.  In these cases, Cohen's kappa values are between 0.2 and 0.3, indicative of a very poor classification model with very little predictive power. 
+
+While sample size is partially addressable in data collection, the degree to which archaeological deposits are aggregated over some window of time is often not alterable in research design.  There is equifinality here which we simply cannot avoid in most archaeological cases, which renders our ability to distinguish between realistic mixtures of social learning modes and unbiased copying unreliable at best, and impossible at worst.  
+
+\subsection{Which Predictor Variables Help Discriminate Models?}
+
+% \begin{table}[ht]
+% \begin{tabular}{rc}
+%   \hline
+% Importance & Predictor Variable \\
+%   \hline
+% 100.00 & Cross-Tabulated Class Richness \\
+%   50.71 & Slatkin Exact for Classes \\
+%   29.50 & Shannon Entropy (Mean for Locus) \\
+%   23.13 & Shannon Entropy for Classes \\
+%   19.66 & IQV Diversity (Mean for Locus) \\
+%   11.58 & Kandler-Shennan Trait Survival (Mean for Locus) \\
+%   \hline
+% \end{tabular}
+% \caption{Relative importance of predictor variables for population census data, in the comparison between unbiased transmission and all biased models.  The most important variable is (by convention) scaled to 100, and the values indicate the ratio of variable importance to the variable which is most effective at classifying data points.  Only values greater than 10 are shown. The remainder of the predictor variables are 1/100th as effective as class richness or less.}
+% \label{ctmixtures:tab:varimp-popcensus}
+% \end{table}
+
+Since there is some predictive power here, particularly using population census information, it is important to understand which variables were providing that discriminatory power.  
+Gradient boosting algorithms allow measurement of how much each predictor variable contributes to a classification model.  The importance of a variable is assessed over the iterations of tree construction by estimating the relative improvement in training set misclassification error from adding the variable to the model.  The importance values are usually scaled such that the most important variable has a score of 100, and variables with smaller importance values are less important to classification power.  
+
+In general the pattern is the same across comparisons, so I illustrate variable importance by examining the comparison between unbiased copiers, and the population composed of a balanced mixture of conformists and anti-conformists.  Table \ref{ctmixtures:tab:varimp-balbiased-census} gives the relative importance of predictor variables when the classifier includes classes created by intersecting the 4 loci with individual traits.
+
+Most classificatory power in this comparison comes from the richness in the cross-tabulated classes.  In general, richness (whether class or per-locus) dominated all of the classifier models, which is not surprising given the central role of the amount of variation in mathematical treatments of the Wright-Fisher and Moran models \citep{Ewens2004}.  The second variable in importance in this comparison is the p-value for a Slatkin's ``exact'' test, which determines the probability that a given set of class frequencies come from the Ewens Sampling Distribution \citep{slatkin1994exact}.  The Shannon entropy, a measure of evenness in frequency (in this case averaged across loci) provides about half as much predictive power as richness. Interestingly the Kandler-Shennan survival time, averaged across the 4 loci, offers significant discriminatory power, suggesting that the method used here for simulating it along with time averaging is a fruitful avenue for additional research.  Beyond this, the predictors have increasingly little power, likely because we have multiple variants on evenness measures in the full list of summary statistics, and their results are collinear with other variables. 
 
 \begin{table}[ht]
 \begin{tabular}{rc}
   \hline
 Importance & Predictor Variable \\
-  \hline
-100.00 & Cross-Tabulated Class Richness \\
-  50.71 & Slatkin Exact for Classes \\
-  29.50 & Shannon Entropy (Mean for Locus) \\
-  23.13 & Shannon Entropy for Classes \\
-  19.66 & IQV Diversity (Mean for Locus) \\
-  11.58 & Kandler-Shennan Trait Survival (Mean for Locus) \\
-   \hline
-\end{tabular}
-\caption{Relative importance of predictor variables for population census data, in the comparison between unbiased transmission and all biased models.  The most important variable is (by convention) scaled to 100, and the values indicate the ratio of variable importance to the variable which is most effective at classifying data points.  Only values greater than 10 are shown. The remainder of the predictor variables are 1/100th as effective as class richness or less.}
-\label{tab:varimp-popcensus}
-\end{table}
-
-Gradient boosting algorithms allow measurement of how much each predictor variable contributes the classification model.  The importance of a variable is assessed over the iterations of tree construction by estimating the relative improvement in training set misclassification error from adding the variable to the model.  The importance values are usually scaled such that the most important variable has a score of 100, and variables with smaller importance values are less important to classification power.  Table \ref{tab:varimp-popcensus} gives the relative importance of predictor variables for the comparison between biased and unbiased models using population census data, and we can see that most of the classification power comes from the richness of cross-tabulated classes, about half as much from the Slatkin Exact test for cross-tabulated classes, and then an entropy measure of diversity among traits and classes.  This is followed by a normalized version of the Shannon entropy, and finally by the Kandler-Shennan survival time, averaged across the 4 loci.   
-
-\subsection{Unbiased Versus Balanced Conformist/Anti conformist
-Bias}\label{unbiased-versus-mixed-conformistanticonformist-bias}
-
-The second comparison pairs unbiased transmission with a model the simulated population is composed of an equal number of conformists and anti-conformists.  The probabilities of  biased copying events are simulation parameters and are chosen uniformly from the prior distribution given in Table \ref{tab:parameters}.  This comparison examines the question of whether mixtures of biases can cancel each other out and appear to be unbiased, previously raised by Mesoudi and Lycett \cite{Mesoudi2009} and others.  I believe this to be a likely scenario, and the likelihood that such mixtures would be indistinguishable from unbiased or neutral transmission when sampled, time averaged, or observed at larger regional scales was the original impetus for this study.  The comparison was performed in the same manner as the first, except that the minor differences between using all predictors and only per-locus variables in the first comparison led to dropping separate comparisons given the computational cost of doing so.  In this and the third comparison, all results refer to the full suite of 23 variables, across the same set of data collection regimes.  
-
-\begin{figure}[h]
-\caption{Cohen's kappa for correctly predicting whether simulated data points originate from unbiased copying or a balanced mixture of pro- and anti-conformist individuals.  Each line in the dotchart represents a different data collection treatment, and overall the results indicate that significant equifinality exists except when time averaging is absent and a population census (or near equivalent) is available.}
-\label{fig5}
-\end{figure}
-
-Fig. \ref{fig5} displays the results of comparing ``balanced biases'' against unbiased transmission.  We can see again that excellent separation is achieved with population census data, but with all of the sampled and time averaged data collection strategies, there is considerable difficulty in correctly predicting the model from which a data point originated.  With larger sample sizes, of course, there is less equifinality than with the smaller 10\% but in both cases Cohen's kappa is 0.5 or less, indicating substantial equifinality though not complete overlap in the model outcomes.  
-
-\begin{table}[ht]
-\begin{tabular}{rc}
-  \hline
-Importance & full\_variable \\
   \hline
 100.00 & Cross-Tabulated Class Richness \\
   85.49 & Slatkin Exact for Classes \\
@@ -578,69 +483,55 @@ Importance & full\_variable \\
   \hline
 \end{tabular}
 \caption{Relative importance of predictor variables for population census data, in the comparison between unbiased transmission and a balanced mixture of pro- and anti-conformists.  The most important variable is (by convention) scaled to 100, and the values indicate the ratio of variable importance to the variable which is most effective at classifying data points. Only values greater than 10 are shown. The remainder of the predictor variables are 1/100th as effective as class richness or less.}
-\label{tab:varimp-balbiased-census}
+\label{ctmixtures:tab:varimp-balbiased-census}
 \end{table}
 
-The same predictor variables are responsible for almost all of the classification power, but there are subtle differences.  Slatkin's ``exact'' test has more relative importance for this comparison than in differentiating between unbiased and all biases, and the entropy measures of diversity also have higher importance.  This suggests that subtle differences in the evenness of classes and individual loci are very important in determining whether a population is truly engaged in unbiased transmission, or whether transmission biases are simply ``canceling out'' at the macroscopic scale.  Unfortunately, it appears that working with small samples of the population in the presence of time averaging strongly compromises our ability to differentiate those scenarios.
+\subsection{Time Averaging Makes Identification of Bias More Likely}
 
-\subsection{Conformist Dominated Versus Anti conformist Dominated
-Populations}\label{conformist-dominated-versus-anticonformist-dominated-populations}
+As shown in these results and previous studies \citep{Madsen2012,Porcic2014,Premo2014}, the temporal aggregation we encounter in archaeological data is a significant barrier to discriminating between theoretical models of cultural transmission.  Equifinality increases as the amount of time averaging represented in a data set increases.  But this is not the whole story.  Time averaging, combined with sampling effects, do not simply make our classifiers worse in a random manner.  Instead, there is substantial bias in the pattern of classification (and thus model identification) errors.  
 
-The final comparison pairs two simulated populations, one of which is dominated by 70\% conformists, with 30\% anti-conformists, and the opposite with 70\% anti-conformists and 30\% conformists.  In previous efforts to model the statistic signatures of conformism and anti-conformism, several authors have argued that there are clear patterns which separate these two modes of transmission (especially see Mesoudi and Lycett \cite{Mesoudi2009}).  My own view is that these modes of transmission are much harder to detect in heterogeneous populations.  This comparison is meant to test a simplified version of this conjecture. In this analysis, the number of conformists and anti-conformists is fixed by each of the models to the ratios given above, but the probability of a biased copying event is set for each simulation run to randomly chosen values drawn from the prior distribution given in Table \ref{tab:parameters}.   
+We can see this clearly by examining two confusion matrices from the comparison between unbiased and a balanced mixture of social learning biases.  Table \ref{ctmixtures:tab:confusion-matrix-census} shows the pattern of correct and incorrect predictions for the population census with no time averaging treatment.  In the confusion matrix, the rows depict the \emph{predicted} data generating model, and the columns provide the true data generating model.  Thus, in the row ``biased'', the first column are correct predictions that data points came from the mixture of biases model, while the second column are incorrect predictions that the data points arose from a model of bias, when the data points in fact arose from unbiased copying.
 
-\begin{figure}[h]
-\caption{Cohen's kappa for correctly predicting whether simulated data points originate from a conformist-dominated mixed population versus a mixed population dominated by anti-conformists.  Each line in the dotchart represents a different data collection treatment, and overall the results indicate that strong equifinality exists regardless of the data collection treatment.}
-\label{fig6}
-\end{figure}
+Even in the population census treatment, there is a slight tendency for prediction errors to be unbalanced.  It is more likely to misidentify a data point arising from unbiased copying as coming from a mixture of biased copiers than it is to make the opposite error.  In other words, we over-identify bias, even with complete data, by about 30%.  
 
-Fig. \ref{fig6} displays the result of this comparison across data collection treatments.  None of the results indicate an ability to cleanly separate these two models.  Population census data and the absence of time averaging certainly help, but the accuracy of classification is dismal in all cases.  Strong equifinality exists between these models, as one might expect given their similarity.  It is possible that with even stronger propensities to engage in conformity or its opposite, that we may be able to detect it in a heterogeneous population, but at the levels probed here, the models are indistinguishable, even in the high-dimensional space created by all 23 predictor variables.  
+Table \ref{ctmixtures:tab:confusion-matrix-sampledata} shows the pattern of errors for the same comparison, but with 20\% sample fraction and time averaging duration of 50 steps.  This is not the worst treatment for accuracy by far, but note that the pattern of errors has become significantly more asymmetric.  With this data collection treatment 2.7 times more likely that we will make an error favoring an identification as transmission bias than that we will misidentify bias as neutrality.  
 
-
-\section{Discussion}\label{discussion}
-
-The classifier models used in this study provide a sensitive probe into the issue of equifinality between models of cultural transmission modes.  Using both accuracy measures and measures of variable importance, this work highlights the variables we need to use in order to reliably distinguish between modes of transmission, given particular data collection conditions, in population models that are more realistic than those previously used.  
-
-This study seems to substantiate previous claims that time averaged data make the task of identifying the mode of transmission difficult.  I propose to extend those claims by noting that small sample sizes dramatically worsen our ability to separate models, and to note that distinguishing \emph{among} detailed models of transmission bias given frequency data alone (on individual dimensions/loci and multidimensional classes) appears to be impossible without new predictor variables.  A better understanding how we can best calculate and use the power law exponent for trait or class diversity may help.  To date I believe there are inconsistent ways in which the statistic has been applied to simulated data, some of which seem incompatible with the measurements we can make on archaeological assemblages.  
-
-But simple equifinality is not the whole story.  It is not simply the case that sampling and time averaging render our predictions of transmission mode random with respect to the set of models tested.  There is substantial bias (in the statistical sense) in the classifier models for sampled and time averaged data collection regimes.  We can see this by looking at individual confusion matrices from predictions made on the hold-out test data.
-
-\begin{table}[!htb]
-    \caption{Two confusion matrices arising from the first model comparison, between unbiased and all biased models.}
-    \label{tab:confusion-matrix-comparison}	
-    \begin{subtable}{.5\linewidth}
-      \centering
-        \caption{Population Census Data}
-\begin{tabular}{|c|c|c|}
-  \hline
- & biased & neutral \\ 
-  \hline
-biased & 14898 & 132 \\ 
-  neutral & 102 & 4868 \\ 
-   \hline
-\end{tabular}
-    \end{subtable}%
-    \begin{subtable}{.5\linewidth}
-      \centering
-        \caption{Sample Size: 20  Duration:  50}
-%`Sample Size:  20  Duration:  50`
-\begin{tabular}{|c|c|c|}
-  \hline
- & biased & neutral \\ 
-  \hline
-biased & 13926 & 2724 \\ 
-  neutral & 1074 & 2276 \\ 
-   \hline
-\end{tabular}
-    \end{subtable} 
+\begin{table}[p!]
+	
+    \begin{tabular}{|c|c|c|}
+      \hline
+     & biased & neutral \\ 
+      \hline
+    biased & 14898 & 132 \\ 
+      neutral & 102 & 4868 \\ 
+       \hline
+    \end{tabular}
+    \caption{Confusion matrix for comparison of unbiased versus mixed bias models, for the data treatment with population census of trait frequencies and no time averaging.}
+    \label{ctmixtures:tab:confusion-matrix-census}
 \end{table}
 
-The left hand side of Table \ref{tab:confusion-matrix-comparison} shows the confusion matrix for the population census data collection treatment, while the right hand panel represents predicts for a sample size of 20\%, time averaged over 50 generations.  The top row of the table shows data points for which the model predicted an origin in a biased model, with the columns representing the ``real'' origin of the data points.  In the left panel, the population census data only identified 132 data points as biased, when they really arose from an unbiased model.  However, in the right panel, we see a very different pattern.  Of the 5000 data points arising from an unbiased model, \emph{more} of the points were identified as coming from biased transmission models than as unbiased.  
+\begin{table}[p!]
+
+    %`Sample Size:  20  Duration:  50`
+    \begin{tabular}{|c|c|c|}
+      \hline
+     & biased & neutral \\ 
+      \hline
+    biased & 13926 & 2724 \\ 
+      neutral & 1074 & 2276 \\ 
+       \hline
+    \end{tabular}
+    \caption{Confusion matrix for comparison of unbiased versus mixed bias models, for the data treatment with 20\% sampling fraction and 50 steps for time averaging duration.}
+    \label{ctmixtures:tab:confusion-matrix-sampledata}
+\end{table}
+
+By looking at the ratio of the right column in each confusion matrix, across all data collection treatments, we can see how the magnitude of this asymmetric preference for identification of bias scales with sample size and duration of time averaging  (Table \ref{ctmixtures:tab:misclassification-neutral}).  The smaller our samples are from the original population, and the more temporal aggregation in our assemblages, the more likely we are to ``see'' biased cultural transmission, even with combinations of summary statistics and powerful classifier models.
 
 \begin{table}[ht]
 
 \begin{tabular}{|l|c|}
   \hline
-Data Collection Treatment & \% of Unbiased Data Misclassified \\
+Data Collection Treatment & \% of Unbiased Data Points Misclassified as Biased \\
   \hline
 Population Census & 2.6 \\
   Per-Locus Population Census & 3.4 \\
@@ -664,64 +555,16 @@ Population Census & 2.6 \\
    \hline
 \end{tabular}
 
-    \caption{REDO!!!  omPercentage of data points from the unbiased transmission model that are falsely identified as arising from a biased model.}
-    \label{tab:misclassification-neutral}
+    \caption{Percentage of data points from the unbiased transmission model that are falsely identified as arising from a biased model.}
+    \label{ctmixtures:tab:misclassification-neutral}
 \end{table}
 
-By looking at the ratio of the right column in each confusion matrix, across all data collection treatments, we can see the magnitude of this ``preference'' for predicting data points as coming from biased transmission models (Table \ref{tab:misclassification-neutral}).  Immediately apparent is that sampling and time averaging have a dramatic effect on predictions of transmission bias, making it extremely likely that we will find sampled and time averaged data samples to fit our models of conformist and anti-conformist bias.  
 
-I believe that this asymmetry in discriminatory ability means that archaeologists must be extremely careful in identifying transmission bias from archaeological samples.  Only under very rare preservation and sedimentary conditions, or in historical contexts, will we find data collection regimes that approximate the population census treatment studied here.  Whenever we deal with small samples and data that come from aggregated deposits, we would do well to exhibit healthy skepticism about our ability to detect transmission bias, or indeed to say much about social learning modes.  In the terms developed in this study, we face some irreducible equifinalities (as between conformism and anti-conformism), and many equifinalities that are reducible given more precise and complete data collection.  Unfortunately, some of these potentially reducible equifinalities may be irreducible in practical terms.  
+\section{Discussion}\label{ctmixtures:sec:conclusion}
 
-This conclusion, however, is relative to the exact details of transmission models, predictor variables, and data collection regimes.  As we develop better models and additional predictor variables that are measurable from archaeological data, we may be able to achieve better resolution of social learning processes.  The classifier approach demonstrated here is capable of identifying whether we have successfully reduced equifinalities, or whether social learning modes remain out of reach for most archaeological contexts, and whether our efforts at applying cultural transmission modeling to the archaeological record would be better served by focusing upon different questions tailored to the data we possess.  
+The central aim in this study has been to examine whether realistic mixtures of social learning strategies present fundamental equifinalities that were impossible to distinguish using population level summary data.  The results demonstrate that mixtures of biased social learning strategies do not ``cancel out'' sufficiently to mask their statistical signatures---when you have enough data, synchronic observations, and use several summary statistics in combination.  
 
+However, when time averaging is present, and especially with small sample sizes, our ability to discriminate between theoretical models essentially disappears.  Equifinality is omnipresent.  Even worse, the results indicate that our ability to distinguish between models does not degrade symmetrically.  In the presence of time averaging and with small samples, we are several times more likely to identify data points as arising from transmission bias than we are when we have synchronic and more complete data.  
 
-
-%%%%%%%%%%%%%%%%%%%%%%% REMOVE THE FOLLOWING ENTIRELY FROM SUBMISSION - JUST FOR EASE OF AUTHORING %%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
-\section*{FIGURES IN DRAFT - REMOVE THIS SECTION FOR SUBMISSION}
-\setcounter{figure}{0}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.6]{graphics/ctmixtures/equifinality-variable-effect.pdf}
-\caption{Simple example of the effect of variable choice in distinguishing models.  The variable on the X axis displays quite a bit of overlap between models, while the variable on the Y axis distinguishes the models with fairly high accuracy.}
-\label{img:variables-equifinality-example}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.6]{graphics/ctmixtures/distributional-overlap.pdf}
-\caption{Simple example of model outcomes with different degrees of distinguishability: (A) simulated data point from two fully separate models, (B) two models with a limited overlap region, (C) and two models whose outcomes are highly overlapping.}
-\label{img:separability-example}
-\end{figure}
-
-\begin{figure}[ht]
-\centering\includegraphics[scale=0.4]{graphics/ctmixtures/time-averaging-with-kandler-sampling.pdf}
-\caption{Schematic of how trait survival as described by Kandler and Shennan \cite{kandler2013non} is extended to time averaged samples of transmission events.  Time runs from the start of the simulation run at the top, to the end at the bottom.  The interval of time over which we calculate the Kandler-Shennan trait survival is given as a simulation parameter, and represents the gap in the middle of the diagram.  Before and after that gap are sampling windows during which transmission events are accumulated over some number of simulated ``generations'' (values of 10, 25, 50, and 100 are used in this paper).  Trait survival is then calculated as the number of traits present in the starting time averaged sample of transmission events, which are still present in the ending time averaged sample of events.}
-\label{img:timeaveraging}	
-\end{figure}
-
-
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[scale=0.5]{figure/unbiased-biased-kappa-dotchart.pdf}
-% \caption{Cohen's kappa for correctly predicting whether simulated data points originate from unbiased copying or any of 3 other biased transmission models.  High values of kappa correspond to high accuracy in correctly distinguishing between transmission models, while values well below 0.5 indicate great difficult and low classifier accuracy.  Each line in the dotchart represents a different data collection treatment, and overall the results indicate that significant equifinality exists except when time averaging is absent and a population census (or near equivalent) is available.}
-% \label{img:unbiased-biased-kappa}
-% \end{figure}
-
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[scale=0.5]{figure/unbiased-balbiased-kappa-dotchart.pdf}
-% \caption{Cohen's kappa for correctly predicting whether simulated data points originate from unbiased copying or a balanced mixture of pro- and anti-conformist individuals.  Each line in the dotchart represents a different data collection treatment, and overall the results indicate that significant equifinality exists except when time averaging is absent and a population census (or near equivalent) is available.}
-% \label{img:unbiased-biased-kappa}
-% \end{figure}
-
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[scale=0.5]{figure/proanticomparison-kappa-dotchart.pdf}
-% \caption{Cohen's kappa for correctly predicting whether simulated data points originate from a conformist-dominated mixed population versus a mixed population dominated by anti-conformists.  Each line in the dotchart represents a different data collection treatment, and overall the results indicate that strong equifinality exists regardless of the data collection treatment.}
-% \label{img:proanti-kappa}
-% \end{figure}
-
+Archaeologists engaged in the study of microevolutionary cultural transmission models should employ a healthy skepticism about the enterprise of fitting artifact class frequency data to models.  Even with diachronic methods such as trait survival \citep{Kandler2013}, multiple summary statistics, and powerful analytic methods, there is little evidence that we can distinguish these models with simulated data.  And that should give us great pause in thinking that our conclusions from analyzing archaeological samples are sound.  It is time to evaluate whether the application of microevolutionary models in archaeology is a fruitful enterprise, or whether our time is better spent deriving models which are robust in the face of time averaging---even if those models address larger scale questions instead of the social psychological questions involved in most dual inheritance theory.  
 
