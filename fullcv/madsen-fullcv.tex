@@ -1,0 +1,174 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, letter]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{textwidth=5.5in, textheight=8in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Minion Pro}
+
+\setmonofont[Scale=0.8]{Monaco} 
+\setsansfont[Scale=0.9]{Optima Regular} 
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler Text}\selectfont\itshape\&}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\sffamily\mdseries\large\underline} 
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+
+\usepackage[citestyle=alphabetic,bibstyle=authoryear,sorting=ydnt,backend=bibtex]{biblatex}
+\addbibresource{madsen-full-bibliography.bib}
+
+% \usepackage{bibtopic}
+% \usepackage{natbib}
+% \bibliographystyle{humannat}
+
+
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Mark E. Madsen - vita},pdfauthor={Mark E. Madsen}]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue} 
+
+% DOCUMENT
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE Vita}
+\vskip 1cm 
+\textsf{\LARGE Mark E. Madsen}\\[1cm]
+Department of Anthropology\\
+Box 353100\\
+University of Washington\\
+Seattle, WA \texttt{98195}
+U.S.A.\\[.2cm]
+Phone: \texttt{206-355-8477}\\[.2cm]
+\textsc{email}: \href{mailto:mark@madsenlab.org}{mark@madsenlab.org}\\
+\vskip 1cm
+Born:  October 22, 1966---Seattle, WA\\
+Nationality:  American
+\end{center}
+
+%%\hrule
+\section*{Current Positions}
+\emph{Chief Technology Officer and President}, Ibis Networks, Honolulu, HI
+
+\emph{Board Member and Past President}, San Juan County Economic Development Council
+
+\emph{President, Board of Trustees}, San Juan Island Library District, Friday Harbor, WA
+
+\emph{Board Member}, Orcas Power and Light Cooperative, Eastsound, WA
+
+\emph{Board Member and Past President, Board of Directors}, Seattle Arts and Lectures, Seattle, WA
+
+
+
+
+
+
+%%\hrule
+\section*{Areas of Specialization}
+Evolutionary theory and human culture; cultural transmission theory; social learning
+
+%\hrule
+\section*{Education}
+
+\noindent\years{2012}\textsc{Ph.D. Candidacy} in Anthropology, University of Washington, Seattle\\
+\noindent\years{1990}\textsc{M.S.} in Anthropology, University of Wisconsin-Madison\\
+\years{1988}\textsc{B.A. cum laude, with College and Dept. Honors} in Anthropology, University of Washington, Seattle
+
+%%\hrule
+\section*{Work Experience}
+
+\noindent\years{2016--}Ibis Networks, Honolulu, HI; \emph{Chief Technology Officer and President}\\
+\years{2005--2006}Microsoft Corporation, Redmond, WA; \emph{Senior Program Manager}\\
+\years{2002--2005}Network Clarity, Seattle, WA; \emph{co-Founder \& V.P., Product Development}\\
+\years{1997--2002}InterNAP Network Services, Seattle, WA; \emph{Dir. of Software and Systems Engineering}\\
+\years{1995--1997}Realnetworks, Seattle, WA; \emph{Software Engineer \& Technical Webmaster}\\
+\years{1999--2005}Pinpoint Venture Group, Seattle, WA; \emph{Managing Partner}\\
+\years{1995--2006}Emergent Media/AllRecipes.com, Seattle, WA; \emph{co-Founder/President \& Board Member}\\
+\years{1994--1995}U.W. Law School, Seattle, WA; \emph{Systems Engineer}\\
+\years{1993--1994}Dept. of Anthropology, Seattle, WA; \emph{Lab Manager}\\
+
+
+
+\section*{Bibliography}
+\begin{refsection}
+\nocite{*}
+\printbibliography[type=article,heading=subbibliography,title={Journal Articles}]
+\end{refsection}
+
+\begin{refsection}
+\nocite{*}
+\printbibliography[type=incollection,heading=subbibliography,title={Book Chapters and Edited Volumes}]
+\end{refsection}
+
+\begin{refsection}
+\nocite{*}
+\printbibliography[type=inproceedings,heading=subbibliography,title={Invited Lectures and Conference Papers}]
+\end{refsection}
+
+
+
+
+
+\section*{Instructorship or TA Positions Held}
+
+\noindent\years{Autumn 1994}Archaeology 205, Teaching Assistant to Dr. Donald Grayson, \emph{University of Washington}\\
+
+%\hrule
+\section*{Grants, honors \amper{} awards}
+
+\noindent\years{1989-1991}National Science Foundation Graduate Fellowship, University of Washington\\
+\years{1988}Regent's Fellowship, University of Wisconsin-Madison\\
+\years{1988-1990}Grants-in-Aid of Research, Sigma Xi Scientific Research Society\\
+\years{1988} Membership, Phi Beta Kappa National Honor Society
+
+
+%
+%%\hrule
+%\section*{Service to the profession}
+%
+%...
+
+%\vspace{1cm}
+\vfill{}
+%\hrulefill
+
+% \begin{center}
+% {\scriptsize  Last updated: \today\- •\- \href{http://notebook.madsenlab.org}{http://notebook.madsenlab.org}
+
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+% }
+% \end{center}
+
+\end{document} 
