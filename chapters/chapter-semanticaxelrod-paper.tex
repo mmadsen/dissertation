@@ -10,7 +10,7 @@
 
 
 
-\section{Introduction}\label{introduction}
+\section{Introduction}\label{semax:sec:introduction}
 
 Although humans and our hominid ancestors have been cultural animals
 throughout our evolutionary history, an important change occurred in our
@@ -183,7 +183,7 @@ this expectation is concordant with Aoki's
 
 In this chapter, we introduce a simulation model which combines a
 hierarchical trait space capable of expressing dependencies or semantic
-relationships between skills and information \citep{mesoudi2008leaning}, and a
+relationships between skills and information \citep{mesoudi2008learning}, and a
 modified version of Robert Axelrod's \citeyearpar{axelrod1997}
 homophilic social learning model which allows us to examine the
 conditions under which evolution in a hierarchical design space leads to
@@ -198,7 +198,7 @@ necessary to examine major transitions in human evolution, such as
 ``behavioral modernity.''
 
 \section{The Semantic Axelrod Model for Trait
-Prerequisites}\label{the-semantic-axelrod-model-for-trait-prerequisites}
+Prerequisites}\label{semax:sec:the-semantic-axelrod-model-for-trait-prerequisites}
 
 Much of our technical knowledge, whether of stone tool manufacture,
 throwing clay pots, or computer repair, is built from simple tasks, bits
@@ -310,7 +310,7 @@ they lack. In the next section, we discuss our model of trait
 relationships and the learning environment in more detail.
 
 \subsection{Representation of Traits And Their
-Prerequisites}\label{representation-of-traits-and-their-prerequisites}
+Prerequisites}\label{semxax:sec:representation-of-traits-and-their-prerequisites}
 
 In order to represent the ``prerequisite'' relations between a number of
 cultural traits, we organize the traits into trees\footnote{A tree is a
@@ -337,7 +337,7 @@ a class of stone tools, drawing the representation from Moore's
 \centering 
 \includegraphics[]{graphics/semanticaxelrod/balanced-trait-tree-3-3.eps} 
 \caption{A single trait tree, represented by a balanced tree with branching factor 3 and depth factor 3, order 40.  In our model, nodes higher in the tree represent prerequisites for nodes lower down the tree.  Each instance of the model will have several or many of these trees in the design space.} 
-\label{img:trait-tree} 
+\label{semax:img:trait-tree} 
 \end{figure}
 
 We should emphasize that employing tree structures to represent learning
@@ -364,7 +364,7 @@ these independent areas is represented by a separate tree of traits.
 \centering 
 \includegraphics[scale=0.6]{graphics/semanticaxelrod/design-space-4-trees.eps} 
 \caption{A design space composed of 4 independent trees, each tree with branching factor 3 and depth factor 3, order 40.  We also studied larger design spaces with 16 independent trees, and with larger branching and depth factors.} 
-\label{img:design-space-4} 
+\label{semax:img:design-space-4} 
 \end{figure}
 
 In each simulation model, we begin with a trait or ``design space'' that
@@ -372,7 +372,7 @@ incorporates several independent sets of traits \citep{o2010cultural}.
 The overall design space of a simulation model is thus a
 forest\footnote{A forest is a graph composed of multiple components,
   each of which is a tree.}, composed of several trees (Figure
-\ref{img:design-space-4}). For each tree in a learning hierarchy, we
+\ref{semax:img:design-space-4}). For each tree in a learning hierarchy, we
 employ balanced trees which have the same number of nodes at each level,
 to provide a simplified model of a design space with which to begin our
 exploration of this class of social learning model, although real design
@@ -380,13 +380,13 @@ spaces are undoubtedly more complex in their geometry. Each tree in our
 model is specified by a branching factor $r$ and depth $h$. As a result,
 each trait tree in the design space has $\sum_{i=0}^{h} r^i$ traits.
 
-The tree depicted in Figure \ref{img:trait-tree} thus has 40 vertices,
+The tree depicted in Figure \ref{semax:img:trait-tree} thus has 40 vertices,
 for example. In this chapter, we examine both small (4 trees) and larger
 (16 trees) design spaces, to see how learning may differ in problems
 involving design spaces of different size and complexity. We examine
 trees with combinations of branching and depth factors of 3 and 5. Thus,
 a design space with 4 trees with branching and depth factors of 3 (as in
-Figure \ref{img:trait-tree}) would have 160 traits, whereas a design
+Figure \ref{semax:img:trait-tree}) would have 160 traits, whereas a design
 space with 16 trees of branching and depth factors of 5 would have a
 total of 62,496 traits.\footnote{We initially chose 6 as the limit on
   branching and depth factors, but found that we cannot calculate
@@ -425,7 +425,7 @@ and will return to the specifics of how an initial culture repertoire is
 chosen.
 
 \subsection{The Axelrod Model of Social Learning and
-Differentiation}\label{the-axelrod-model-of-social-learning-and-differentiation}
+Differentiation}\label{semax:sec:the-axelrod-model-of-social-learning-and-differentiation}
 
 Robert Axelrod \citeyearpar{axelrod1997} formulated a model aimed at
 studying the conditions under which simple learning rules could lead to
@@ -441,7 +441,7 @@ behaviors, and has been extensively studied by social scientists and
 physicists \citep{castellano2009statistical}. First we review the basic
 model, and in the following section our modified algorithm.
 
-\subsubsection{Axelrod's Original Model}\label{axelrods-original-model}
+\subsubsection{Axelrod's Original Model}\label{semax:sec:axelrods-original-model}
 
 The original model locates $N$ individuals on the nodes of a regular
 lattice or grid, but various network structures have also been studied.
@@ -454,7 +454,7 @@ probability equal to the overlap between their cultural repertoire.
 Overlap, in the basic model, is simply the fraction of features for
 which $i$ and $j$ possess the same trait value:
 
-\begin{equation}\label{eq:axelrod}p(i,j) = \frac{1}{F} \sum_{f=1}^{F} \delta_{\sigma_f(i)\sigma_f(j)}\end{equation}
+\begin{equation}\label{semax:eq:axelrod}p(i,j) = \frac{1}{F} \sum_{f=1}^{F} \delta_{\sigma_f(i)\sigma_f(j)}\end{equation}
 
 where $\delta_{i,j}$ is Kronecker's delta function, taking the value $1$
 when its two arguments are equal and $0$ otherwise. When individuals
@@ -498,13 +498,13 @@ the model to produce polycultural solutions, or change the time scale or
 location of the critical point.
 
 \subsubsection{Semantic Extensions to the Axelrod
-Model}\label{semantic-extensions-to-the-axelrod-model}
+Model}\label{semxax:sec:semantic-extensions-to-the-axelrod-model}
 
 We begin each simulation with $N$ (100, 225, or 400) agents, arranged on
 a square grid. A design space is created, with some number of trait
 trees (4 or 16), with uniform branching factors and depth factors (3 or
 5). An example of such a tree is shown in panel A of Figure
-\ref{img:prereq}. Initial traits (and their prerequisites) are chosen
+\ref{semax:img:prereq}. Initial traits (and their prerequisites) are chosen
 randomly across the configured number of trait trees, as follows. For
 each individual, we select a random number $t$ between 1 and 4, and
 repeat the trait selection process $t$ times for that individual. In
@@ -516,7 +516,7 @@ individuals. We then walk $d$ steps into the tree, making uniform random
 selections for the children of each vertex. The path of vertices thus
 constructed is added to the individual's trait set, giving them an
 initial trait and its necessary prerequisites. One such initial trait is
-shown in Panel B of Figure \ref{img:prereq}. Given that individuals
+shown in Panel B of Figure \ref{semax:img:prereq}. Given that individuals
 begin with a small number of initial traits (between 1 and 4, selected
 randomly), and their prerequisites, the initial trait endowment of an
 individual is between 1 and $4h$, where $h$ is the maximum depth of the
@@ -531,7 +531,7 @@ design space (either 3 or 5 in the experiments reported here).\footnote{At
 \centering 
 \includegraphics[scale=0.5]{graphics/semanticaxelrod/design-init-final.eps} 
 \caption{Illustration of a design space composed of a single trait tree, along with a random initial trait chosen from the design space, and a final sample from a simulation run, showing the evolution of traits within the design space.  Also shown in the top panel are the ``prerequisites'' for a cultural trait (35), as an example.} 
-\label{img:prereq} 
+\label{semax:img:prereq} 
 \end{figure}
 
 Once the population is initialized, the simulation runs a discrete
@@ -543,7 +543,7 @@ step, an agent (A) is chosen at random, and a random neighbor of A is
 then selected (agent B). Their probability of interaction is given by
 the overlap of trait sets, which is most simply calculated as the
 Jaccard overlap between the set of tree vertices each possesses, thus
-replacing Equation \ref{eq:axelrod} with:
+replacing Equation \ref{semax:eq:axelrod} with:
 
 \begin{equation}J(A,B) = \frac{|V(A) \cap V(B)|}{|V(A) \cup V(B)|}\end{equation}
 
@@ -561,7 +561,7 @@ example. If such a prerequisite learning event occurs given
 $\mathbb{P}(l)$, agent A learns the most fundamental of T's
 prerequisites that it does not already possess. For example, agent A
 might require the trait closest to T (e.g., trait 11 in Figure
-\ref{img:prereq}, if the original trait targeted was 35).
+\ref{semax:img:prereq}, if the original trait targeted was 35).
 
 Additionally, at each time step, there is a probability $\mathbb{P}(m)$
 that one random individual in the population will learn a new trait (and
@@ -617,11 +617,11 @@ two time scales: developmental learning and evolutionary dynamics given
 birth and death. Samples are taken beginning at 6 million steps, and
 sampling at an interval of 1 million steps, and record the trait trees
 seen in the population. An example of such a sampled tree is shown in
-Panel C of Figure \ref{img:prereq}. For reference, the full algorithm
+Panel C of Figure \ref{semax:img:prereq}. For reference, the full algorithm
 for each copying step is given in the Appendix as Algorithm
-\ref{alg:tree-prereq-axelrod}.
+\ref{semax:alg:tree-prereq-axelrod}.
 \section{Measuring Cultural Diversity and the Results of Structured
-Learning}\label{measuring-cultural-diversity-and-the-results-of-structured-learning}
+Learning}\label{semax:sec:measuring-cultural-diversity-and-the-results-of-structured-learning}
 
 Each sample from a simulation run is composed of the distinct sets of
 trait trees possessed by individuals in the population, along with
@@ -642,7 +642,7 @@ given to the population.
 \centering 
 \includegraphics[]{graphics/semanticaxelrod/equil-trait-tree.eps} 
 \caption{An example set of traits at the conclusion of a simulation run, extracted from a simulation with branching factor 3 and depth factor 3, and a single trait tree as the trait space.  The remaining density of vertices, mean vertex degree, and radius of the tree are noted.  Vertex colors denote ``structural equivalence'' classes or ``orbit structure,'' as measured by adjacency patterns, and is one measure of the symmetries present in the tree.} 
-\label{img:final-tree} 
+\label{semax:img:final-tree} 
 \end{figure}
 
 From the sampled trait trees, we calculate summary statistics as
@@ -657,13 +657,13 @@ Similarly, in the original design space, the branching factor describes
 how many children each node in the tree started with, so measuring the
 average vertex degree gives us a rough measure of how broad a cultural
 repertoire is. Each of these measures is illustrated in Figure
-\ref{img:final-tree} for an example tree selected from our data.
+\ref{semax:img:final-tree} for an example tree selected from our data.
 
 In addition to these simple numerical measures comparing final trees to
 the original design space, it is useful to measure something about the
 overall ``shape'' of the trees themselves. One way of formalizing this
 notion is to examine the \emph{symmetries} of the final trait trees.
-Examining Figure \ref{img:final-tree}, if we ignore the exact identities
+Examining Figure \ref{semax:img:final-tree}, if we ignore the exact identities
 of traits for the moment, it is apparent that there are repeating
 patterns. For example, the left-most branches each terminate in a pair
 of leaves. This pattern is repated on the second right-most branch.
@@ -677,7 +677,7 @@ way that the structure of the object is preserved
 \citep{rotman1995introduction}. Graph automorphisms map vertices in a
 graph to each other, preserving properties such as the adjacency pattern
 of edges. The six vertices which mark the repeating pattern of
-leaf-pairs in Figure \ref{img:final-tree} are an automorphism of the
+leaf-pairs in Figure \ref{semax:img:final-tree} are an automorphism of the
 tree, and thus are symmetries we can measure. An overall measure of
 ``how symmetrical'' (or ``how many interchangeable patterns'') there are
 in a graph possesses given by the total number of automorphisms found,
@@ -685,7 +685,7 @@ called the size of the automorphism group or $|\textit{Aut}(G)|$
 \citep{godsil2001algebraic}. A tree with no repeating patterns will thus
 have an automorphism group size of 1, indicating that the only symmetry
 is the entire tree itself. A balanced tree with branching and depth
-factors of 3, as depicted in Figure \ref{img:trait-tree}, has
+factors of 3, as depicted in Figure \ref{semax:img:trait-tree}, has
 approximately $1.3 \times 10^{10}$ automorphisms. The more repeating
 patterns there are in trait trees, the more automorphisms they will
 possess.
@@ -696,9 +696,9 @@ measure of the symmetries present is to count the \emph{classes} of
 equivalences into which vertices fall. The \emph{orbits} of the
 automorphism group are the sets of vertices which are interchangable by
 some permutation that preserves structure. For example, the graph in
-Figure \ref{img:trait-tree} has five orbits, with each vertex at a given
+Figure \ref{semax:img:trait-tree} has five orbits, with each vertex at a given
 level interchangable (in a structural sense). Similarly, the six leaf
-vertices that are part of pairs in Figure \ref{img:final-tree} are part
+vertices that are part of pairs in Figure \ref{semax:img:final-tree} are part
 of the same orbit; in this illustration, each orbit is given a different
 color to highlight their equivalence. For each cultural region found
 when sampling a simulation, we calculate the size of the automorphism
@@ -708,7 +708,7 @@ and Adolfo Piperno \citep{McKay201494}.\footnote{Nauty+Traces can be
   downloaded at \url{http://pallini.di.uniroma1.it/}. We employed
   version 2.5r7 for this research.}
 
-\section{Experiments}\label{experiments}
+\section{Experiments}\label{semax:sec:experiments}
 
 Given a modified Axelrod model on a tree-structured trait space, we
 expect to see greater cultural diversity, differentiation among groups
@@ -741,7 +741,7 @@ we examined design spaces that were small (4 trait trees) and large (16
 trait trees). Within each size, we further examined combinations of
 branching factor and depth factor with values of 3 and 5, thus yielding
 8 total sizes of design space (Table
-\ref{tab:axelrod-design-space-size}).
+\ref{semax:tab:axelrod-design-space-size}).
 
 \begin{table}[H]
 \begin{tabular}{|c|c|c|c|}
@@ -767,14 +767,14 @@ branching factor and depth factor with values of 3 and 5, thus yielding
 \hline
 \end{tabular}
 \caption{Size of design space for different trait tree configurations}
-\label{tab:axelrod-design-space-size}
+\label{semax:tab:axelrod-design-space-size}
 \end{table}
 
 Further, we examined three levels of global mutation or innovation rate:
 zero, or no mutation, and 0.00005 and 0.0001. Such rates created a
 constant supply of new innovations, but several orders of magnitude less
 frequent than copying and prerequisite learning events. The full set of
-parameters are given in Table \ref{tab:axelrodct-sim-parameters}. In
+parameters are given in Table \ref{semax:tab:axelrodct-sim-parameters}. In
 this pilot study, for each combination of all of the above parameters,
 we performed 25 replications. With 5 samples per simulation run, this
 yielded 10,963,691 samples of cultural regions.
@@ -805,7 +805,7 @@ Depth of traits in each trait tree & 3, 5\\
 \hline
 \end{tabular}
 \caption{Parameter space for simulations described in this chapter}
-\label{tab:axelrodct-sim-parameters}
+\label{semax:tab:axelrodct-sim-parameters}
 \end{table}
 
 \section{Results}\label{results}
@@ -829,19 +829,19 @@ strongly suggestive that hierarchical trait models have potential in
 modeling cumulative technological evolution, making the computational
 expense worthwhile.
 
-\subsection{Cultural Diversity}\label{cultural-diversity}
+\subsection{Cultural Diversity}\label{semax:sec:cultural-diversity}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.4]{graphics/semanticaxelrod/small-trait-high-innovation-num-configs.eps}
     \caption{Number of cultural configurations in simulations with the smallest trait space (160 total traits in 4 trees), and a high individual innovation rate ($10^{-4}$).}
-    \label{img:culture-count-sm-trait-high-innov}
+    \label{semax:img:culture-count-sm-trait-high-innov}
 \end{figure}
 
 Variation among individuals is foundational to evolutionary processes,
 and is the raw material from which differentiation between regions and
 cultural groups is constructed. Figure
-\ref{img:culture-count-sm-trait-high-innov} depicts the number of
+\ref{semax:img:culture-count-sm-trait-high-innov} depicts the number of
 cultural configurations (i.e., trait trees) in a population of size 100,
 for the smallest trait space with only 160 total traits, and relatively
 high levels of individual innovation. For example, in the left-most
@@ -861,15 +861,15 @@ of traits from the overall design space.
     \centering
     \includegraphics[scale=0.4]{graphics/semanticaxelrod/culture-count-lr04-by-traitspace-size.eps}
     \caption{Number of cultural configurations in simulations with an intermediate learning rate (0.4), across different sizes of trait space.}
-    \label{img:culture-count-lr04-by-traitspace-size}
+    \label{semax:img:culture-count-lr04-by-traitspace-size}
 \end{figure}
 
 Looking at the data from another perspective, we can hold the fidelity
 of learning constant (say, at a 40\% chance of being taught a needed
 prerequisite), with the same global innovation rate ($10^{-4}$) as
-Figure \ref{img:culture-count-sm-trait-high-innov}, and examine the
+Figure \ref{semax:img:culture-count-sm-trait-high-innov}, and examine the
 effect of different size design spaces (Figure
-\ref{img:culture-count-lr04-by-traitspace-size}). In general,
+\ref{semax:img:culture-count-lr04-by-traitspace-size}). In general,
 populations exhibit greater differentiation between individuals as the
 design space gets larger, as prerequisite learning helps individuals
 acquire adjacent traits, and individual innovation randomly explores
@@ -894,7 +894,7 @@ Depth}\label{trait-richness-and-knowledge-depth}
 \centering 
 \includegraphics[scale=0.4]{graphics/semanticaxelrod/mean-radius-by-learning-rate-innov-12.eps} 
 \caption{Mean depth of trait sets, by prerequisite learning rate and global innovation rate, for population size 100.} 
-\label{img:mean-radius-cultures-100} 
+\label{semax:img:mean-radius-cultures-100} 
 \end{figure}
 
 Cumulative evolution of technology is represented in our model by the
@@ -902,11 +902,11 @@ population learning its way \emph{down} the trees which compose the
 design space. Possession of traits deeper in the trees represents skills
 or information which is more specific, possessing more prerequisites.
 Thus, we expect that the depth (or ``radius'', see Figure
-\ref{img:final-tree}) of trees would increase with the prerequisite
+\ref{semax:img:final-tree}) of trees would increase with the prerequisite
 learning rate, representing a learning environment which is structured
 to ensure such acquisition.
 
-Figure \ref{img:mean-radius-cultures-100} gives the \emph{normalized}
+Figure \ref{semax:img:mean-radius-cultures-100} gives the \emph{normalized}
 mean radius of cultural regions, broken out by the prerequisite learning
 rate along the horizontal axis, and each group of 3 boxplots displays
 the differing global innovation rates studied. Radii are normalized to
@@ -920,7 +920,7 @@ innovation rates is small--what matters most in terms of qualitative
 behavior is the presence of global innovation outside the teaching or
 learning of prerequisites themselves.
 
-\subsection{Population Size}\label{population-size}
+\subsection{Population Size}\label{semax:sec:population-size}
 
 Earlier, we mentioned that population size does not seem to be a primary
 factor in explaining the measured diversity in cultural transmission
@@ -938,12 +938,12 @@ populations of 100, 225, and 400.\footnote{We should note that learning
 \centering 
 \includegraphics[scale=0.4]{graphics/semanticaxelrod/mean-radius-by-learning-rate-pop.eps} 
 \caption{Mean depth of trait sets, by prerequisite learning rate and population sizes of 100, 225 and 400.} 
-\label{img:mean-radius-cultures-pop} 
+\label{semax:img:mean-radius-cultures-pop} 
 \end{figure}
 
-Figure \ref{img:mean-radius-cultures-pop} displays the relationship
+Figure \ref{semax:img:mean-radius-cultures-pop} displays the relationship
 between mean radius (or depth) of the cultural traits in each cultural
-sample, as in Figure \ref{img:mean-radius-cultures-100} above, but the
+sample, as in Figure \ref{semax:img:mean-radius-cultures-100} above, but the
 boxplots are instead colored by population size. At least over a range
 of group or deme sizes likely to be relevant to Paleolithic archaeology,
 population size makes no difference to the qualitative behavior of the
@@ -951,7 +951,7 @@ model. There is, however, a very slight decrease in mean radius of trait
 sets with larger population size, which is likely a consequence of a
 larger population spreading out over the trait space.
 
-\subsection{Trait Tree Symmetries}\label{trait-tree-symmetries}
+\subsection{Trait Tree Symmetries}\label{semcax:sec:trait-tree-symmetries}
 
 Finally, we examined the algebraic properties of the trait trees
 composing cultural regions, examining both the number of vertex
@@ -966,11 +966,11 @@ focus here on the raw automorphism group size.
 \centering 
 \includegraphics[scale=0.4]{graphics/semanticaxelrod/autgroupsize-by-learning-by-innovation.eps} 
 \caption{Number of symmetries in trait tree samples, measured as the log of the order of the automorphism group of the trait graphs, broken down by prerequisite learning rate (rows) and global innovation rate (columns).} 
-\label{img:autgsize} 
+\label{semax:img:autgsize} 
 \end{figure}
 
 The logarithm of the automorphism group size does hint at interesting
-structure (Figure \ref{img:autgsize}). In the presence of mutation, the
+structure (Figure \ref{semax:img:autgsize}). In the presence of mutation, the
 learning of prerequisites narrows the range of variability for the
 automorphism group size, and at higher learning rates renders the
 distribution multimodal. The modality arises because of the different
@@ -1005,7 +1005,7 @@ $\textrm{Rub\'en S\'anchez-Garc\'ia's}$
 \citeyearpar{macarthur2008symmetry} work on the symmetries of complex
 networks.
 
-\section{Discussion}\label{discussion}
+\section{Discussion}\label{semax:sec:discussion}
 
 
 The ``semantic Axelrod'' model described here specifically addresses
@@ -1073,7 +1073,7 @@ a crucial component in multifactor evolutionary explanations for the
 complex of changes seen in modern \emph{Homo sapiens} and some
 Neanderthal populations in the later Paleolithic.
 
-\section{Acknowledgements}\label{acknowledgements}
+\section{Acknowledgements}\label{semax:sec:acknowledgements}
 
 The authors wish to thank Briggs Buchanan and Mark Collard for the
 invitation to participate in the symposium ``Current Research in
@@ -1089,11 +1089,11 @@ automorphism group of trees.
 
 \clearpage
 
-\section{Appendices}\label{appendices}
+\section{Appendices}\label{semax:sec:appendices}
 
-\subsection{Algorithm Description}\label{algorithm-description}
+\subsection{Algorithm Description}\label{semax:sec:algorithm-description}
 
-Algorithm \ref{alg:tree-prereq-axelrod} describes the ``semantic''
+Algorithm \ref{semax:alg:tree-prereq-axelrod} describes the ``semantic''
 Axelrod model variant studied in this chapter. Within the algorithm,
 there are several functions which find traits with particular
 properties. Some, like \textbf{GetTraitUniquetoFocal()}, are fairly
@@ -1101,7 +1101,7 @@ simple set operations but were abbreviated to clarify the notation.
 
 \begin{algorithm}[H]
     \caption{}
-    \label{alg:tree-prereq-axelrod}
+    \label{semax:alg:tree-prereq-axelrod}
     \begin{boxedminipage}{\textwidth}
     \begin{algorithmic}[1]
         %\REQUIRE lossrate is the population rate at which traits are randomly lost to drift

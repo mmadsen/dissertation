@@ -7,7 +7,7 @@ Sufficiency'' at the Society for American Archaeology conference, April 2016  Co
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}\label{introduction}
+\section{Introduction}\label{multser:sec:introduction}
 
 Seriation is a set of methods that uses patterns in the occurrence or
 abundance of historical classes to construct an ordering among otherwise
@@ -72,7 +72,7 @@ historical type will be unimodal, possessing a single peak of
 \centering
 \includegraphics[scale=0.6]{graphics/multipleseriation/seriation-methods.pdf}
 \caption{\citet{Dunnell1981} defines seriation to be a set of methods which use historical classes to chronologically order otherwise unordered archaeological assemblages and/or objects. Historical classes are those which display more variability through time than through space. Occurrence seriation uses presence/absence data for each historical class from each assemblage \citep{Kroeber1916,Petrie:1899aa}. Frequency seriation uses ratio level abundance information for historical classes \citep{Spier1917,Ford:1935aa,Ford:1962aa}. Frequency and occurrence seriation techniques can take the form of deterministic algorithms that require an exact match with the unimodal model or probabilistic algorithms that accept departures from an exact fit. Identity approaches employ raw data (whether frequency or occurrence) to perform the ordering. Similarity approaches transform the raw data into a non-unique coefficient (e.g., Brainerd Robinson, squared Euclidean distance); the coefficients then form the basis for ordering.}
-\label{img:seriation-methods}
+\label{multser:img:seriation-methods}
 \end{figure}
 
 Both the frequency and occurrence principle work to sort descriptions of
@@ -117,7 +117,7 @@ parallel machine learning frameworks, and thus made applicable to large
 data sets, increasing our ability to examine regional scale phenomena in archaeology, and making seriation useful for detailed analysis of contemporary data sets which dwarf the sample sizes typically available to archaeologists.
 
 \section{Seriation and the Frequency
-Principle}\label{seriation-and-the-frequency-principle}
+Principle}\label{multser:sec:seriation-and-the-frequency-principle}
 
 Seriation, in the Americanist sense, was initially developed by Alfred
 Kroeber \citep{Kroeber1916} in the Southwest, based on his observations
@@ -173,7 +173,7 @@ of constructing and testing such types became known, after Krieger
 significance.''
 
 \subsection{Unimodality and Cultural Transmission
-Processes}\label{unimodality-and-cultural-transmission-processes}
+Processes}\label{multser:sec:unimodality-and-cultural-transmission-processes}
 
 In most cases (such as the above quote from Phillips, Ford, and
 Griffin), the popularity principle is simply assumed to hold in
@@ -219,7 +219,7 @@ variation was one key step in the adoption of stochastic models of drift
 from population genetics as the main tool for exploring cultural
 transmission dynamics. Neiman \citeyearpar{Neiman1995} took this step
 substantially further when he simulated drift in cultural variants as an
-unbiased transmission process, as shown in Figure \ref{img:neiman-fig2}.
+unbiased transmission process, as shown in Figure \ref{multser:img:neiman-fig2}.
 Immediately apparent is the fact that some variants do display unimodal
 patterns, but most variants are multimodal or display violations of
 unimodality at small scales even if the macroscopic shape seems to
@@ -229,10 +229,10 @@ conform to the popularity principle.
 \centering
 \includegraphics[scale=0.6]{graphics/multipleseriation/neiman-1995-figure2a.pdf}
 \caption{Neiman's simulation of drift in cultural variant frequencies under unbiased cultural transmission (reproduction of Figure 2a from Neiman 1995.)}
-\label{img:neiman-fig2}
+\label{multser:img:neiman-fig2}
 \end{figure}
 
-Figure \ref{img:neiman-fig2} shows that there is nothing
+Figure \ref{multser:img:neiman-fig2} shows that there is nothing
 necessary about unimodality given cultural transmission.  Instead, culture-historical 
 classifications and typologies were constructed such that they produced compact
 spatiotemporal distributions and generally followed unimodal histories.  This is precisely
@@ -241,7 +241,7 @@ typology.
 This is accomplished by ensuring that types are composed of multiple
 dimensions of variation which co-occur on artifacts identified to that
 type.  Each dimension of variation (e.g., surface treatment) may have complex histories,
-like those seen in Figure \ref{img:neiman-fig2}, but when we combine several dimensions into a class, 
+like those seen in Figure \ref{multser:img:neiman-fig2}, but when we combine several dimensions into a class, 
 the history of the \emph{co-occurrence} of each combination of attributes becomes smoother and more 
 localized in time and space.  This process of class construction necessarily results in a 
 more compact spatiotemporal distribution for the class than for any of its constituent attributes.
@@ -267,7 +267,7 @@ identifying chronological patterns, culture historians were satisfied
 with the subset that worked.
 
 \subsection{Continuity: An Alternative to
-Unimodality}\label{continuity-an-alternative-to-unimodality}
+Unimodality}\label{multser:sec:continuity-an-alternative-to-unimodality}
 
 There are several reasons why we should explore alternatives to
 unimodality as an ordering algorithm for frequency seriation. First,
@@ -286,7 +286,7 @@ Second, and more importantly from a theoretical perspective, it is
 important to be able to trace heritable continuity even if does not
 display a particular type of temporal frequency distribution. Using
 traditional type construction methods and the test of historical
-significance, culture historians were able to find \textbf{enough}
+significance, culture historians were able to find \emph{enough}
 conforming types and classes to construct regional chronologies. The
 goal of culture historians was to build chronologies using the most
 efficient means possible to do so, not study combinations of trait
@@ -331,7 +331,7 @@ minimizing a suitable distance metric, with assemblages represented by
 points in a multidimensional space of type frequencies or counts.
 
 \subsection{Statistical Seriation
-Methods}\label{statistical-seriation-methods}
+Methods}\label{multser:sec:statistical-seriation-methods}
 
 The earliest statistical techniques for seriation were also built upon
 using interassemblage distance metrics. Brainerd \citeyearpar{Brainerd1951} and Robinson
@@ -401,7 +401,7 @@ But the departure from linearity is not ``noise,'' in the statistical
 sense. Especially if one accounts for sampling error in constructing
 seriation orders (as we do in IDSS by using the bootstrap to construct
 confidence intervals around the empirical frequencies), then departures
-from a linear ordering are \textbf{signal}, not noise. Such solutions
+from a linear ordering are \emph{signal}, not noise. Such solutions
 reflect the fact that an assemblage at time \(T_1\), for example, may be
 the closest match to two different assemblages at later times \(T_2\)
 and \(T_3\) for example, given slightly different areas of overlap in
@@ -412,7 +412,7 @@ splitting of populations into separate lineages or their merger (see Chapter \re
 
 \subsection{\texorpdfstring{Exact Distance Minimization Ordering:
 ``Continuity''
-Seriation}{Exact Distance Minimization Ordering: Continuity Seriation}}\label{exact-distance-minimization-ordering-continuity-seriation}
+Seriation}{Exact Distance Minimization Ordering: Continuity Seriation}}\label{multser:sec:exact-distance-minimization-ordering-continuity-seriation}
 
 Instead of the ``approximate'' distance minimization algorithms employed
 in multidimensional scaling, we explore exact solutions using our IDSS
@@ -467,7 +467,7 @@ macroevolutionary level, best explored using the tools of phylogenetic
 analysis and cladistic techniques.
 
 \section{Comparing Frequency and Continuity
-Seriation}\label{comparing-frequency-and-continuity-seriation}
+Seriation}\label{multser:sec:comparing-frequency-and-continuity-seriation}
 
 In this section we compare the results of our IDSS frequency seriation
 algorithm, described in a recent paper \citep{lipomadsendunnell2015},
@@ -481,14 +481,14 @@ as the ordering principle.
 \includegraphics[scale=0.5]{graphics/multipleseriation/pfg-minmax-network-both-solutions.pdf}
 \caption{Seriation solution with frequency and continuity seriation for PFG \citeyearpar{Phillips1951} ceramic assemblages in 
 the Lower Mississippi River Valley, as analyzed by Lipo \citeyearpar{Lipo2001a} and re-analyzed by \citet{lipomadsendunnell2015}.  There are no differences between frequency and continuity ordering algorithms in analyzing this set of assemblages, and thus only one graph is shown.}
-\label{img:pfg-both-solutions}
+\label{multser:img:pfg-both-solutions}
 \end{figure}
 
 To that end, we extended the Lower Mississippi River Valley example
 from our recent work \citep{lipomadsendunnell2015} by comparing
 frequency and continuity seriation algorithms on the same set of
 assemblages.  The result is
-depicted in Figure \ref{img:pfg-both-solutions}. The result is identical
+depicted in Figure \ref{multser:img:pfg-both-solutions}. The result is identical
 -- the two solutions are isomorphic.  
 
 We are archiving seriation data sets, with supporting information including geography 
@@ -540,18 +540,18 @@ such a case in detail to understand what drives such differences when
 they occur.
 
 \subsection{Examining a Solution Which
-Differs}\label{examining-a-solution-which-differs}
+Differs}\label{multser:sec:examining-a-solution-which-differs}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.4]{graphics/multipleseriation/f8a6f378-freq.png}
 \caption{Frequency seriation solution for simulation run f8a6f378 on the "lineage splitting" regional interaction model.}
-\label{img:differing-freq}
+\label{multser:img:differing-freq}
 \end{figure}
 
 Of the differing solutions, we selected one (f8a6f378) at random to show
 the details of how frequency and continuity solutions differ. Figures
-\ref{img:differing-freq} and \ref{img:differing-cont} depict the
+\ref{multser:img:differing-freq} and \ref{multser:img:differing-cont} depict the
 frequency and continuity seriations, respectively, in the form of graphs
 which connect assemblages which are ``adjacent'' in the seriation
 solution. This makes it easier to see where an assemblage is really part
@@ -564,7 +564,7 @@ seriation solutions in our recent article on IDSS seriation
 \centering
 \includegraphics[scale=0.4]{graphics/multipleseriation/f8a6f378-cont.png}
 \caption{Continuity seriation solution for simulation run f8a6f378 on the "lineage splitting" regional interaction model.}
-\label{img:differing-cont}
+\label{multser:img:differing-cont}
 \end{figure}
 
 Although the graphs are laid out slightly differently (as a function of
@@ -604,13 +604,13 @@ assemblage-874-851  & 81                & 66    & 0     & 165               & 0 
 assemblage-402-995  & 106               & 65    & 0     & 29                & 0                 & 0           & 192         & 0     & 7         \\ \bottomrule
 \end{tabular}
 \caption{Raw data for frequency seriation for simulation run f8a6f378, grouped into blocks corresponding to the branches of the solution graph}
-\label{f8a6f378-freq-table}
+\label{multser:tab:f8a6f378-freq-table}
 \end{sidewaystable}
 
 Viewed in traditional tabular view of the type counts in Tables
-\ref{f8a6f378-freq-table} and \ref{f8a6f378-cont-table} or as
-traditional centered bar charts in Figures \ref{img:frequency} and
-\ref{img:continuity}, several features are apparent. First, there are
+\ref{multser:tab:f8a6f378-freq-table} and \ref{multser:tab:f8a6f378-cont-table} or as
+traditional centered bar charts in Figures \ref{multser:img:frequency} and
+\ref{multser:img:continuity}, several features are apparent. First, there are
 apparent violations of unimodality in the frequency seriation. But given
 our IDSS algorithm, we calculate a 95\% confidence interval around each
 type count given the total sample size, and thus there are small
@@ -642,25 +642,25 @@ assemblage-506-308 & 107 & 58 & 0 & 199 & 114 & 0 & 9 & 0 & 13 \\
 assemblage-618-780 & 123 & 50 & 0 & 164 & 121 & 0 & 13 & 0 & 14 \\ \bottomrule
 \end{tabular}
 \caption{Raw data for continuity seriation for simulation run f8a6f378, grouped into blocks corresponding to the branches of the solution graph}
-\label{f8a6f378-cont-table}
+\label{multser:tab:f8a6f378-cont-table}
 \end{sidewaystable}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.5]{graphics/multipleseriation/frequency.pdf}
 \caption{Centered bar chart representation of the relative frequencies of type for simulation run f8a6f378 built with the IDSS frequency seriation algorithm. The groups correspond to the branches of the solution graph.}
-\label{img:frequency}
+\label{multser:img:frequency}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.5]{graphics/multipleseriation/continuity.pdf}
 \caption{Centered bar chart representation of the relative frequencies of type for simulation run f8a6f378 built with the IDSS continuity seriation algorithm. The groups correspond to the branches of the solution graph.}
-\label{img:continuity}
+\label{multser:img:continuity}
 \end{figure}
 
 
-\section{Discussion}\label{discussion}
+\section{Discussion}\label{multser:sec:discussion}
 
 The fact that distance minimization can function as a seriation ordering
 algorithm is not a new idea. Not only has there been development of the
