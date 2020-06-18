@@ -663,6 +663,14 @@ In addition to these simple numerical measures comparing final trees to
 the original design space, it is useful to measure something about the
 overall ``shape'' of the trees themselves. One way of formalizing this
 notion is to examine the \emph{symmetries} of the final trait trees.
+
+\begin{figure}[htbp] 
+  \centering 
+  \includegraphics[scale=0.5]{graphics/semanticaxelrod/graph-symmetries.pdf} 
+  \caption{An illustration of symmetries present in a graph.  Vertices that occupy positions with the same connectivity structure are interchangeable without changing the connectivity structure, and thus represent a ``symmetry'' under a transformation, while leaving the overall structure of the graph unchanged.  The full tree (A) displays the most symmetry, with all; vertices at each vertical level ``swappable for each other''.  As vertices are deleted in graphs (B) and then (C), vertices become less and less interchangeable given different numbers of edges present, and thus are broken into non-interchangeable sets, shown as different colored vertex sets (technically, each set is an ``orbit'' of the automorphism group of the graph).} 
+  \label{semax:img:graph-symmetries} 
+  \end{figure}
+
 Examining Figure \ref{semax:img:final-tree}, if we ignore the exact identities
 of traits for the moment, it is apparent that there are repeating
 patterns. For example, the left-most branches each terminate in a pair
@@ -672,23 +680,21 @@ search for in large sets of trees, but we can summarize them by
 considering trait trees as algebraic objects and examining their
 \emph{automorphisms}.
 
+\textcolor{teal}{Figure \ref{semax:img:graph-symmetries} provides a simple example of symmetries in a small tree, and how those symmetries are ``lost'' as the tree is thinned of vertices and edges.  Thus, measuring the total number of interchangeable patterns or symmetries in a tree representing a cultural repertoire is a relative measure of how a repertoire ``fills'' the original design space.  
 An automorphism is a function which maps an object to itself, in such a
 way that the structure of the object is preserved
-\citep{rotman1995introduction}. Graph automorphisms map vertices in a
+\citep{rotman1995introduction}, and thus is an operational definition for the ``symmetries'' one intuitively perceives in something like the trees shown here. Graph automorphisms map vertices in a
 graph to each other, preserving properties such as the adjacency pattern
-of edges. The six vertices which mark the repeating pattern of
-leaf-pairs in Figure \ref{semax:img:final-tree} are an automorphism of the
-tree, and thus are symmetries we can measure. An overall measure of
-``how symmetrical'' (or ``how many interchangeable patterns'') there are
-in a graph possesses given by the total number of automorphisms found,
-called the size of the automorphism group or $|\textit{Aut}(G)|$
+of edges. }
+
+\textcolor{teal}{For purposes of relative comparison, we measure the total number of automorphisms found in each sampled cultural repertoire.  In algebraic graph theory, this is referred to as the size of the automorphism group or $|\textit{Aut}(G)|$
 \citep{godsil2001algebraic}. A tree with no repeating patterns will thus
 have an automorphism group size of 1, indicating that the only symmetry
 is the entire tree itself. A balanced tree with branching and depth
 factors of 3, as depicted in Figure \ref{semax:img:trait-tree}, has
 approximately $1.3 \times 10^{10}$ automorphisms. The more repeating
 patterns there are in trait trees, the more automorphisms they will
-possess.
+possess.}
 
 Because group sizes grow quickly and the accuracy of performing
 calculations with truly astronomical numbers is low, another possible
